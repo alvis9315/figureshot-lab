@@ -5,10 +5,12 @@
     :class="selected ? 'border-fs-accent' : 'border-transparent hover:border-fs-muted/30'"
     @click="$emit('select', style.id)"
   >
-    <!-- 風格預覽占位:正式版換 PRE-006 種子示意圖(motion spec 4.1:hover 亮度 +4~8%) -->
+    <!-- 風格預覽占位:正式版換 PRE-006 種子示意圖
+         cinema:漸層 + hover 提亮;bluebottle:深灰純色、hover 變藍(2026-07-12) -->
     <div
-      class="aspect-video w-full transition duration-150 group-hover:brightness-110"
-      :style="`background: ${style.gradient}`"
+      class="aspect-video w-full transition duration-150"
+      :class="isLight ? 'bg-[#2f3033] group-hover:bg-fs-accent' : 'group-hover:brightness-110'"
+      :style="isLight ? undefined : `background: ${style.gradient}`"
       aria-hidden="true"
     />
     <div class="flex items-center justify-between bg-fs-surface px-3 py-2">
@@ -25,8 +27,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { DemoStyle } from '../constants/demoStyles'
 
 defineProps<{ style: DemoStyle; selected?: boolean }>()
 defineEmits<{ select: [string] }>()
+
+const { theme } = useTheme()
+const isLight = computed(() => theme.value === 'bluebottle')
 </script>

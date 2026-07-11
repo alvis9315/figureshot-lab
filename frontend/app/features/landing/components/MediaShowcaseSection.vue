@@ -5,7 +5,7 @@
     <div class="group relative overflow-hidden rounded-2xl">
       <!-- 大卡:白版 #02a8e0、深版深灰(2026-07-12) -->
       <BaseMedia
-        class="h-[40vh] w-full transition-transform duration-300 ease-out group-hover:scale-[1.02] md:h-[48vh]"
+        class="h-[40vh] w-full transition-transform duration-300 ease-out group-hover:scale-[1.03] md:h-[48vh]"
         :fallback="isLight ? 'background:#02a8e0' : 'background:#2a2b2e'"
       />
       <div class="absolute inset-x-0 bottom-0 p-6 md:p-8" :class="isLight ? '' : 'bg-gradient-to-t from-black/70 to-transparent'">
