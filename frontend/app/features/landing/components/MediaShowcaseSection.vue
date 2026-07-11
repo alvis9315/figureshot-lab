@@ -5,7 +5,7 @@
     <div class="group relative overflow-hidden rounded-2xl">
       <BaseMedia
         class="h-[40vh] w-full transition-transform duration-300 ease-out group-hover:scale-[1.02] md:h-[48vh]"
-        fallback="background: hsl(36 14% 13%)"
+        fallback="background: hsl(30 38% 16%)"
       />
       <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8">
         <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-fs-accent">{{ $t('landing.media.featured') }}</p>
@@ -17,7 +17,7 @@
       <div v-for="thumb in thumbs" :key="thumb.scene" class="group relative overflow-hidden rounded-xl">
         <BaseMedia
           class="aspect-video w-full transition-transform duration-300 ease-out group-hover:scale-[1.05]"
-          :fallback="`background: hsl(${thumb.hue} 16% 15%)`"
+          :fallback="`background: hsl(${thumb.hue} 42% 21%)`"
         />
         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3">
           <p class="text-sm font-medium">{{ $t(`style.scene.${thumb.scene}`) }}</p>

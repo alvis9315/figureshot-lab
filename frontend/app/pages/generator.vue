@@ -101,6 +101,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { onMounted } from 'vue'
 import ModeSwitch, { type GeneratorMode } from '~/features/generator/components/ModeSwitch.vue'
 import FigureCard from '~/features/generator/components/FigureCard.vue'
 import SlotCard from '~/features/generator/components/SlotCard.vue'
@@ -109,6 +110,7 @@ import ResultPanel from '~/features/generator/components/ResultPanel.vue'
 import CharacterDetailPanel from '~/features/generator/components/CharacterDetailPanel.vue'
 import StyleScenePicker, { type StyleSelection } from '~/features/style/components/StyleScenePicker.vue'
 import { demoFigures, type DemoFigure } from '~/features/generator/constants/demoFigures'
+import { demoStyles, demoScenes, demoMoods, demoTasks } from '~/features/style/constants/demoStyles'
 
 // 靜態展示層:互動僅為呈現動畫狀態(選中/Slot/Lock/Randomize/Result),不含真實邏輯與 API
 const mode = ref<GeneratorMode>('pair')
@@ -176,4 +178,23 @@ function reroll() {
   randomize()
   requestAnimationFrame(() => (showResult.value = true))
 }
+
+// 首頁輪盤跳轉(?spin=1):自動隨機配對 + 風格場景 + 直接亮出結果(擁有者體驗設計 2026-07-12)
+const route = useRoute()
+
+function sample<T>(arr: readonly T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)]!
+}
+
+onMounted(() => {
+  if (!route.query.spin) return
+  randomize()
+  styleSelection.value = {
+    style: sample(demoStyles).id,
+    scene: sample(demoScenes),
+    mood: sample(demoMoods),
+    task: sample(demoTasks),
+  }
+  showResult.value = true
+})
 </script>

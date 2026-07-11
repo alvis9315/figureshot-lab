@@ -81,7 +81,9 @@
     "spin": {
       "title": "Feeling lucky?",
       "subtitle": "Spin the wheel and let your collection surprise you with today's pairing.",
-      "cta": "Spin & Create"
+      "cta": "Spin & Create",
+      "success": "It's a match!",
+      "go": "Begin the journey →"
     }
   },
   "generator": {
