@@ -12,6 +12,7 @@
     "@fontsource-variable/space-grotesk": "^5.2.10",
     "@nuxtjs/i18n": "^10.4.1",
     "@pinia/nuxt": "^0.11.3",
+    "embla-carousel-vue": "^8.6.0",
     "nuxt": "^4.4.8",
     "pinia": "^3.0.4"
   },

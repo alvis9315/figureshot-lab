@@ -34,16 +34,16 @@
       </Transition>
     </div>
 
-    <!-- 左右側箭頭:滿版區塊兩側、垂直置中、44px 觸控圓鈕、低調配色(參考 Apple/GM 慣例) -->
+    <!-- 左右側箭頭:無外框大字雪佛蘭,粗體高可見(擁有者校正 2026-07-12) -->
     <button
       type="button"
-      class="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-fs-text/15 bg-fs-bg/40 text-xl text-fs-muted backdrop-blur-sm transition duration-150 hover:border-fs-text/40 hover:text-fs-text md:left-6"
+      class="absolute left-2 top-1/2 z-10 -translate-y-1/2 px-3 py-2 font-display text-4xl font-bold text-fs-text/70 transition duration-150 hover:text-fs-text md:left-5 md:text-5xl"
       :aria-label="$t('landing.carousel.prev')"
       @click="go(current - 1)"
     >‹</button>
     <button
       type="button"
-      class="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-fs-text/15 bg-fs-bg/40 text-xl text-fs-muted backdrop-blur-sm transition duration-150 hover:border-fs-text/40 hover:text-fs-text md:right-6"
+      class="absolute right-2 top-1/2 z-10 -translate-y-1/2 px-3 py-2 font-display text-4xl font-bold text-fs-text/70 transition duration-150 hover:text-fs-text md:right-5 md:text-5xl"
       :aria-label="$t('landing.carousel.next')"
       @click="go(current + 1)"
     >›</button>

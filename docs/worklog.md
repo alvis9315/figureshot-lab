@@ -36,6 +36,8 @@
 
 - **首頁節奏 v5**(擁有者回饋):①漸層回歸細緻版——暖色階多停點(米→暖褐→深棕→黑),不再灰階直混;②02 改 Apple Fitness+ 式 MediaShowcaseSection(一大圖 21:9 + 下排四小圖);③03 改 Apple News 式 ShelfSection + **BaseShelf 慣性滑動容器**(momentum scrolling:滑鼠拖曳、放手速度衰減滑出、snap-proximity 緩停、拖曳後抑制誤點;觸控用原生慣性);LightSpillSection 刪除、FullBleedBlock 轉備用。
 
+- **首頁節奏 v6**(擁有者六點回饋):①輪播箭頭去圓框、放大加粗、提高可見度;②漸層改白→金屬銀→黑冷色階(暖褐顯髒);③03 櫥窗區移除打光層(輪播已用過燈光);④大圖小圖文字一律壓圖內左下 + hover 微放大;⑤櫥窗改 **Embla**(loop 無限循環 + dragFree 摩擦減速 = iPhone 相簿手感),全寬無邊界書架、卡片×2 確保寬螢幕無縫;⑥新依賴 `embla-carousel-vue`(~8KB 無樣式輪播引擎,取代手刻慣性物理——手刻版手感不順且無限循環易出縫,專用引擎是正解;不違反 motion spec 的「避免重型動畫庫」)。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。
