@@ -32,7 +32,7 @@
 
 > 三關進度(2026-07-12 更新):
 > - **第 1 關:已完成**——深色為主、平衡型;參考已由 UX 參考包定案(核心:Apple Vision Pro=資訊層級、Gentle Monster=電影感、Hero Team Character Select=配對感、Teenage Engineering=控制台感;輔助:Nothing、Leica Looks、Interface In Game)。逐張規格見 docs/ux/visual-reference-guide.md。
-> - **第 2 關:部分完成**——深色 + 電影感 + 訊號色點綴(暫維持暖橘 accent);**字體性格未定**(標題襯線/幾何無襯線),暫用系統字,定案後只改 token。
+> - **第 2 關:已完成**——深色 + 電影感 + 訊號色點綴(暖橘 accent)。字體定案(2026-07-12,依參考收斂裁決):**標題 Space Grotesk**(幾何無襯線,self-host)、**內文系統無襯線**(SF Pro / PingFang TC,零下載且 CJK 原生)、**等寬點綴**(控制台標籤選用)。理由:七個參考來源(Apple、Gentle Monster、TE、Nothing、Rivals、Leica)全為無襯線科技/產品語感,無一襯線案例——電影感由影像與留白承擔,不靠襯線字;CJK 不裝 webfont 以顧 Global-first 首載。token:`--fs-font-display / body / mono`。
 > - **第 3 關:已完成**——首頁滿版 Hero + 輪盤快抽意象、Generator 角色池+Slot、風格卡圖片導向、Result 同頁滑入面板(2026-07-12 擁有者確認)。
 
 **第 2 關:視覺語言**

@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-11',
   modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
-  css: ['~/assets/styles/main.css'],
+  css: ['@fontsource-variable/space-grotesk', '~/assets/styles/main.css'],
   vite: {
     plugins: [tailwindcss()],
   },

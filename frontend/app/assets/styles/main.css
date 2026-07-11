@@ -8,6 +8,13 @@
   --fs-text: #f5f2ec;
   --fs-text-muted: #9b968c;
   --fs-accent: #e8a33d; /* 攝影棚燈暖橘 */
+
+  /* 字體定案(2026-07-12,依 UX 參考收斂:核心參考全為無襯線科技感)
+     標題:幾何無襯線 Space Grotesk(self-host);內文:系統無襯線(SF Pro/PingFang TC,零下載、CJK 原生);
+     等寬:控制台標籤點綴用(Teenage Engineering / Nothing 語感) */
+  --fs-font-display: 'Space Grotesk Variable', ui-sans-serif, -apple-system, 'PingFang TC', 'Noto Sans TC', sans-serif;
+  --fs-font-body: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, 'PingFang TC', 'Noto Sans TC', sans-serif;
+  --fs-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 @theme {
@@ -16,11 +23,19 @@
   --color-fs-text: var(--fs-text);
   --color-fs-muted: var(--fs-text-muted);
   --color-fs-accent: var(--fs-accent);
+  --font-display: var(--fs-font-display);
+  --font-mono: var(--fs-font-mono);
 }
 
 body {
   background-color: var(--fs-bg);
   color: var(--fs-text);
+  font-family: var(--fs-font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--fs-font-display);
+  letter-spacing: -0.01em;
 }
 
 /* ===== Motion(docs/ux/motion/motion-interaction-spec.md)===== */
