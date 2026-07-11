@@ -13,6 +13,14 @@
           <NuxtLink :to="localePath('/login')" class="hover:text-fs-text">{{ $t('nav.login') }}</NuxtLink>
           <button
             type="button"
+            class="px-1 py-1 transition hover:text-fs-text"
+            :aria-label="$t('search.open')"
+            @click="searchOpen = true"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+          </button>
+          <button
+            type="button"
             class="rounded border border-fs-surface px-2 py-0.5 hover:text-fs-text"
             @click="toggleLocale"
           >
@@ -38,13 +46,18 @@
       <slot />
     </main>
     <TheFooter />
+    <SearchOverlay :open="searchOpen" @close="searchOpen = false" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import SearchOverlay from '~/features/search/components/SearchOverlay.vue'
+
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 const { theme, toggle } = useTheme()
+const searchOpen = ref(false)
 
 function toggleLocale() {
   setLocale(locale.value === 'en' ? 'zh-TW' : 'en')

@@ -172,6 +172,13 @@
     "backHome": "About FigureShot Lab",
     "demoNote": "Preview build: this share page shows demo content until saved inspirations go live."
   },
+  "search": {
+    "open": "Search",
+    "placeholder": "What can we help you find?",
+    "topCategories": "Top categories",
+    "popular": "Popular inspirations",
+    "quickLinks": "Quick links"
+  },
   "footer": {
     "product": "Product",
     "account": "Account",

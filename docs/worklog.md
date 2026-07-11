@@ -46,6 +46,8 @@
 
 - **雙配色方案**(擁有者需求,token 化驗收):新增 `bluebottle` 主題(60% 白 #fbfaf6 / 30% 鈷藍 #2149c1 / 10% 深灰 #2f3033,參考 Blue Bottle 僅取色彩元素)——實作 = main.css 覆寫 `[data-theme]` 五變數 + useTheme composable(cookie 持久化、SSR 無閃爍)+ 兩 layout 色票圓點切換鈕,**元件零修改**,證明元件化換膚成立。輪播可讀性遮罩改 color-mix(var(--fs-bg)) 雙主題通用。
 
+- **搜尋雙元件**(擁有者需求,採藍瓶版):①SearchOverlay——header 放大鏡 → 全頁覆蓋層右→左滑入(0.35s),搜尋框(自動聚焦)+ 熱門分類 chips + 推薦靈感三卡;Enter 帶 ?q= 跳 generator 預填角色池搜尋;Esc/✕ 關閉、開啟時鎖 body 捲動;②SearchPanel——Apple 式頂部下拉半屏(大搜尋框 + 快速連結 + 背景壓暗),收元件庫備用未接線。兩 layout 均接 Overlay。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

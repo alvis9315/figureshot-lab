@@ -187,6 +187,8 @@ function sample<T>(arr: readonly T[]): T {
 }
 
 onMounted(() => {
+  // 搜尋覆蓋層帶入的關鍵字(?q=)預填角色池搜尋
+  if (route.query.q) search.value = String(route.query.q)
   if (!route.query.spin) return
   randomize()
   styleSelection.value = {

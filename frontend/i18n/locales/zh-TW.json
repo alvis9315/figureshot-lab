@@ -172,6 +172,13 @@
     "backHome": "認識 FigureShot Lab",
     "demoNote": "預覽版:儲存靈感功能上線前,本分享頁顯示示範內容。"
   },
+  "search": {
+    "open": "搜尋",
+    "placeholder": "想找什麼靈感?",
+    "topCategories": "熱門分類",
+    "popular": "熱門靈感",
+    "quickLinks": "快速連結"
+  },
   "footer": {
     "product": "產品",
     "account": "帳號",
