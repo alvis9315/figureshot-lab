@@ -30,7 +30,7 @@
               :video="card.video"
               :image="card.image"
               class="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
-              :fallback="cardFallback(card.hue, 0.4)"
+              :fallback="cardFallback(i)"
             />
           </div>
           <p class="mt-3 max-w-lg px-1 text-sm text-fs-muted">
@@ -45,11 +45,12 @@
             <BaseMedia
               :video="card.video"
               :image="card.image"
-              :fallback="cardFallback(card.hue, 0.45)"
+              :fallback="cardFallback(i)"
             />
+            <!-- sm 卡文字在卡內:淺色卡底一律深字 -->
             <div class="absolute inset-x-0 bottom-0 p-4">
-              <p class="font-mono text-[9px] uppercase tracking-wider text-fs-accent">{{ $t(`style.name.${card.style}`) }}</p>
-              <p class="mt-1 text-sm font-medium leading-snug">{{ $t(`landing.shelf.cards.${card.key}`) }}</p>
+              <p class="font-mono text-[9px] uppercase tracking-wider" :class="theme === 'bluebottle' ? 'text-fs-accent' : 'text-[#8a5a2b]'">{{ $t(`style.name.${card.style}`) }}</p>
+              <p class="mt-1 text-sm font-medium leading-snug" :class="theme === 'bluebottle' ? '' : 'text-[#17161a]'">{{ $t(`landing.shelf.cards.${card.key}`) }}</p>
             </div>
           </div>
         </template>
@@ -76,13 +77,11 @@ const cards = demoInspirations
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]
 
-// 卡片底:cinema=各色相光暈深底;bluebottle=深灰純色(金屬藍光經實測顯濁,棄用 2026-07-12)
+// 卡片底(2026-07-12):cinema=白/黃純色交替;bluebottle=深灰純色
 const { theme } = useTheme()
 
-function cardFallback(hue: number, alpha: number) {
+function cardFallback(index: number) {
   if (theme.value === 'bluebottle') return 'background:#2f3033'
-  return `background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, hsl(${hue} 50% 42% / ${alpha}), transparent 75%),
-    linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`
+  return index % 2 === 0 ? 'background:#f5f2ec' : 'background: var(--fs-accent)'
 }
 </script>

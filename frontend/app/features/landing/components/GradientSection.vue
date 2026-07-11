@@ -2,8 +2,12 @@
   <!-- 轉場區塊(主題分支,2026-07-12 擁有者定版):
        cinema=細緻銀階漸層;bluebottle=不用漸層——與上方色帶平行的斜切,之後一路白底 -->
   <section class="relative" :class="isLight ? '-mt-12' : ''" :style="bgStyle">
+    <!-- 深色版標題用黃(accent);白版維持深灰字(2026-07-12) -->
     <div class="mx-auto max-w-6xl px-4 pt-40 md:pt-52">
-      <h2 class="font-display text-4xl font-bold uppercase leading-none tracking-tight text-fs-text/90 md:text-6xl">
+      <h2
+        class="font-display text-4xl font-bold uppercase leading-none tracking-tight md:text-6xl"
+        :class="isLight ? 'text-fs-text/90' : 'text-fs-accent'"
+      >
         {{ title }}
       </h2>
     </div>

@@ -12,7 +12,6 @@
           kicker="01"
           :title="$t('landing.story1.title')"
           :description="$t('landing.story1.desc')"
-          :accent-strength="14"
           tone="light"
         />
       </RevealSection>

@@ -5,11 +5,10 @@
     class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-16 md:grid-cols-2 md:py-24"
     :class="flip ? 'md:[&>div:first-child]:order-2' : ''"
   >
-    <!-- 視覺占位:待模型攝影素材;白版由 CSS 改 #02a8e0 純色(story-visual) -->
+    <!-- 視覺占位:待模型攝影素材;深色版=黃(accent)、白版由 CSS 蓋 #02a8e0(story-visual,2026-07-12) -->
     <div
       class="story-visual aspect-[4/3] rounded-2xl"
-      :class="tone === 'light' ? 'bg-fs-bg/10' : 'bg-fs-surface'"
-      :style="`background-image: radial-gradient(ellipse 80% 70% at 50% 45%, color-mix(in srgb, var(--fs-accent) ${accentStrength}%, transparent), transparent 75%)`"
+      style="background-color: var(--fs-accent)"
       aria-hidden="true"
     />
     <div class="flex flex-col gap-4">
@@ -26,7 +25,6 @@ withDefaults(defineProps<{
   title: string
   description: string
   flip?: boolean
-  accentStrength?: number
   tone?: 'light' | 'dark'
-}>(), { flip: false, accentStrength: 10, tone: 'dark' })
+}>(), { flip: false, tone: 'dark' })
 </script>
