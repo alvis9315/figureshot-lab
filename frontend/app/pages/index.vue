@@ -4,7 +4,7 @@
          滿版輪播 → 斜切亮帶 → 漸層轉場 → 滿版資訊卡 → 輪盤;規則見 docs/ui-style-guide.md -->
     <HeroCarousel />
 
-    <AngledSection :title="$t('landing.story1.kicker')" tone="light" slant="right">
+    <AngledSection :title="$t('landing.story1.kicker')" tone="light" slant="right" close-bottom>
       <RevealSection>
         <FeatureStorySection
           kicker="01"
@@ -16,7 +16,7 @@
       </RevealSection>
     </AngledSection>
 
-    <GradientSection :title="$t('landing.story2.kicker')" from-tone="light">
+    <LightSpillSection :title="$t('landing.story2.kicker')">
       <RevealSection>
         <FeatureStorySection
           kicker="02"
@@ -26,7 +26,7 @@
           :accent-strength="8"
         />
       </RevealSection>
-    </GradientSection>
+    </LightSpillSection>
 
     <FullBleedBlock
       :label="`03 · ${$t('landing.story3.kicker')}`"
@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import HeroCarousel from '~/features/landing/components/HeroCarousel.vue'
 import AngledSection from '~/features/landing/components/AngledSection.vue'
-import GradientSection from '~/features/landing/components/GradientSection.vue'
+import LightSpillSection from '~/features/landing/components/LightSpillSection.vue'
 import FeatureStorySection from '~/features/landing/components/FeatureStorySection.vue'
 import FullBleedBlock from '~/features/landing/components/FullBleedBlock.vue'
 import QuickSpinSection from '~/features/landing/components/QuickSpinSection.vue'

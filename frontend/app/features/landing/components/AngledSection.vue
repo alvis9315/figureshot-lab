@@ -1,8 +1,9 @@
 <template>
-  <!-- 斜切色帶(guide: hero-team-character-detail 的亮暗帶 + 超大章節標題語彙)
-       負 margin 讓斜邊咬進上一區塊,形成 Rivals 式交錯轉場 -->
+  <!-- 斜切色帶(guide: hero-team-character-detail 語彙)
+       不與上一區塊重疊——切邊完整落在第一屏之下(擁有者校正 2026-07-12);
+       closeBottom 時底邊也斜切,整條色帶成平行四邊形 -->
   <section
-    class="relative -mt-12"
+    class="relative"
     :class="tone === 'light' ? 'text-fs-bg' : 'text-fs-text'"
     :style="`${clipPath}; background: ${tone === 'light' ? 'var(--fs-text)' : 'var(--fs-bg)'}`"
   >
@@ -14,7 +15,9 @@
         {{ title }}
       </h2>
     </div>
-    <slot />
+    <div :class="closeBottom ? 'pb-16' : ''">
+      <slot />
+    </div>
   </section>
 </template>
 
@@ -25,11 +28,14 @@ const props = withDefaults(defineProps<{
   title: string
   tone?: 'light' | 'dark'
   slant?: 'left' | 'right'
-}>(), { tone: 'dark', slant: 'right' })
+  closeBottom?: boolean
+}>(), { tone: 'dark', slant: 'right', closeBottom: false })
 
-const clipPath = computed(() =>
-  props.slant === 'right'
-    ? 'clip-path: polygon(0 0, 100% 3rem, 100% 100%, 0 100%)'
-    : 'clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%)',
-)
+const clipPath = computed(() => {
+  const top = props.slant === 'right' ? '0 0, 100% 3rem' : '0 3rem, 100% 0'
+  const bottom = props.closeBottom
+    ? (props.slant === 'right' ? '100% 100%, 0 calc(100% - 3rem)' : '100% calc(100% - 3rem), 0 100%')
+    : '100% 100%, 0 100%'
+  return `clip-path: polygon(${top}, ${bottom})`
+})
 </script>
