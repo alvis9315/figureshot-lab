@@ -11,7 +11,8 @@
       style="background-color: var(--fs-accent)"
       aria-hidden="true"
     />
-    <div class="flex flex-col gap-4">
+    <!-- 文字欄靠上(md:self-start),不與高卡片垂直置中(擁有者校正 2026-07-12) -->
+    <div class="flex flex-col gap-4 md:self-start md:pt-10">
       <p class="font-mono text-sm uppercase tracking-[0.3em] text-fs-accent">{{ kicker }}</p>
       <h3 class="text-3xl font-semibold md:text-4xl" :class="tone === 'light' ? 'text-fs-bg' : ''">{{ title }}</h3>
       <p class="max-w-md" :class="tone === 'light' ? 'text-fs-bg/65' : 'text-fs-muted'">{{ description }}</p>
