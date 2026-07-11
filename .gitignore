@@ -38,3 +38,6 @@ backend/uploads/
 .idea/
 *.iml
 .vscode/
+
+# UX reference archive(原始截圖僅本機保存,原圖另有 ~/figreShotLab參考資料.zip 備份)
+docs/ux/references/archive/

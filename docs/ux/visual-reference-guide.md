@@ -3,7 +3,7 @@
 這份文件將已收斂的參考圖片逐張說明，供 Claude Code 在實作前理解每張圖的用途、可借用元素與不可照抄部分。
 ## 主參考圖索引
 ### Apple Vision Pro Hero
-- File：`docs/ux/references/landing/apple-vision-pro-hero.png`
+- File：`docs/ux/references/landing/apple-vision-pro-hero.jpg`
 - Source URL：https://www.apple.com/apple-vision-pro/
 - Use for：Landing 第一屏 Hero
 - Keep：
@@ -25,7 +25,7 @@
 - Copyright Note：只參考結構與資訊層級，不複製品牌元素
 
 ### Apple Feature Section
-- File：`docs/ux/references/landing/apple-feature-entertainment.png`
+- File：`docs/ux/references/landing/apple-feature-entertainment.jpg`
 - Source URL：https://www.apple.com/apple-vision-pro/
 - Use for：Landing 功能敘事區段
 - Keep：
@@ -43,7 +43,7 @@
 - Copyright Note：僅借用段落節奏
 
 ### Gentle Monster Home Campaign
-- File：`docs/ux/references/landing/gentle-monster-home-campaign.png`
+- File：`docs/ux/references/landing/gentle-monster-home-campaign.jpg`
 - Source URL：https://www.gentlemonster.com/
 - Use for：Landing 電影感氛圍
 - Keep：
@@ -61,7 +61,7 @@
 - Copyright Note：不複製商品或品牌圖像
 
 ### Gentle Monster Detail Focus
-- File：`docs/ux/references/landing/gentle-monster-detail-focus.png`
+- File：`docs/ux/references/landing/gentle-monster-detail-focus.jpg`
 - Source URL：https://www.gentlemonster.com/
 - Use for：Result 頁與主題頁的高質感構圖
 - Keep：
@@ -79,7 +79,7 @@
 - Copyright Note：不複製原商品圖片
 
 ### Nothing Light Hero
-- File：`docs/ux/references/landing/nothing-light-hero.png`
+- File：`docs/ux/references/landing/nothing-light-hero.jpg`
 - Source URL：https://nothing.tech/
 - Use for：淺色科技感備選
 - Keep：
@@ -97,7 +97,7 @@
 - Copyright Note：僅借用配色邏輯與層級
 
 ### Hero Team Character Select Classic
-- File：`docs/ux/references/character-select/hero-team-select-classic.png`
+- File：`docs/ux/references/character-select/hero-team-select-classic.jpg`
 - Source URL：User collected image based on Marvel vs. Capcom character select
 - Use for：Generator 的經典角色池與左右對峙感
 - Keep：
@@ -116,7 +116,7 @@
 - Copyright Note：不複製角色素材與 UI 細節
 
 ### Hero Team Character Select Modern
-- File：`docs/ux/references/character-select/hero-team-select-modern.png`
+- File：`docs/ux/references/character-select/hero-team-select-modern.jpg`
 - Source URL：User collected image based on modern character select (Marvel vs. Capcom / Marvel Rivals inspiration)
 - Use for：Generator 的現代化選角版型
 - Keep：
@@ -134,7 +134,7 @@
 - Copyright Note：僅參考資訊架構與狀態邏輯
 
 ### Hero Team Character Detail
-- File：`docs/ux/references/character-select/hero-team-character-detail-spiderman.png`
+- File：`docs/ux/references/character-select/hero-team-character-detail-spiderman.jpg`
 - Source URL：https://www.marvelrivals.com/
 - Use for：角色詳情面板與熱門角色視覺
 - Keep：
@@ -152,7 +152,7 @@
 - Copyright Note：不複製角色或數據內容
 
 ### Hero Team Team-Up Lineup
-- File：`docs/ux/references/character-select/hero-team-teamup-lineup.png`
+- File：`docs/ux/references/character-select/hero-team-teamup-lineup.jpg`
 - Source URL：https://www.marvelrivals.com/
 - Use for：Squad / Crossover 的組隊關係顯示
 - Keep：
@@ -170,7 +170,7 @@
 - Copyright Note：僅借用排列與關係視覺
 
 ### Teenage Engineering Home Grid
-- File：`docs/ux/references/workspace/teenage-engineering-home-grid.png`
+- File：`docs/ux/references/workspace/teenage-engineering-home-grid.jpg`
 - Source URL：https://teenage.engineering/
 - Use for：Workspace 的模組排列與控制器感
 - Keep：
@@ -188,7 +188,7 @@
 - Copyright Note：只參考模組化布局
 
 ### Teenage Engineering EP Controls
-- File：`docs/ux/references/workspace/teenage-engineering-ep-controls.png`
+- File：`docs/ux/references/workspace/teenage-engineering-ep-controls.jpg`
 - Source URL：https://teenage.engineering/
 - Use for：Generator 控制面板
 - Keep：
@@ -206,7 +206,7 @@
 - Copyright Note：不複製工業設計
 
 ### Interface Cyberpunk UI
-- File：`docs/ux/references/workspace/interface-cyberpunk-ui.png`
+- File：`docs/ux/references/workspace/interface-cyberpunk-ui.jpg`
 - Source URL：https://interfaceingame.com/
 - Use for：深色工作台、資訊面板與 HUD 感補充
 - Keep：
@@ -224,7 +224,7 @@
 - Copyright Note：研究案例用途
 
 ### Leica Looks Gallery
-- File：`docs/ux/references/style/leica-looks-gallery.png`
+- File：`docs/ux/references/style/leica-looks-gallery.jpg`
 - Source URL：https://leica-camera.com/en-int/photography/leica-looks
 - Use for：攝影風格選擇
 - Keep：
@@ -242,7 +242,7 @@
 - Copyright Note：不複製作品圖片內容
 
 ### Leica Style Grid
-- File：`docs/ux/references/style/leica-style-grid.png`
+- File：`docs/ux/references/style/leica-style-grid.jpg`
 - Source URL：User collected screenshot based on Leica style selection
 - Use for：多風格並列與結果預覽
 - Keep：
