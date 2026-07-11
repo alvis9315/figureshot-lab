@@ -1,0 +1,6 @@
+# 正式環境:所有值一律來自部署平台環境變數,無預設值
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}

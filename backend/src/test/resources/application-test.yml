@@ -1,0 +1,12 @@
+# 測試用 in-memory H2;migration 含 PostgreSQL 專屬型別(jsonb),
+# 故測試不跑 Flyway,SQL 正確性靠本機 Postgres 驗證(見 docs/testing-guide.md)
+spring:
+  datasource:
+    url: jdbc:h2:mem:figureshot;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    username: sa
+    password:
+  flyway:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: none
