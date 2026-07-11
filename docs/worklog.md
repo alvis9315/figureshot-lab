@@ -40,6 +40,8 @@
 
 - **首頁節奏 v7**(擁有者三項需求):①ShelfSection 加 size 變體——lg 為 Apple 式大卡(82vw~46rem、16:9、說明移圖下),sm 保留,首頁改用 lg;②新 Base 元件 **BaseMedia**:每張卡可塞 image 或 video,video 自帶圓形播放/暫停鈕(Apple 式),無素材吃漸層占位——素材進場只填欄位;③新 **PinnedStorySection 定格滾動敘事**(scroll-pinning:220vh 滾動區 + sticky 滿版 + 進度驅動文字穿越,reduced-motion 靜態),插入 Hero 之後作三行品牌宣言段。
 
+- **首頁節奏 v8**(擁有者六點回饋):①03 標題區置中、CTA 置中、拖曳提示移按鈕下;②02 卡片去光改純色(之後放圖/影),大卡改 vh 高度 + 段落收斂讓 02 一屏完整;③輪盤段 min-h-92vh 置中自成一屏,書架加底距,上方說明文字不再壓進輪盤畫面;④新 TheFooter(品牌+產品/帳號/社群欄+版權,Apple 式)取代單行 footer,兩 layout 共用;⑤頂部列固定(landing fixed / default sticky)+ 毛玻璃半透明 + 窄版 py-2.5。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

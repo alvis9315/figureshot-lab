@@ -170,6 +170,13 @@
     "backHome": "認識 FigureShot Lab",
     "demoNote": "預覽版:儲存靈感功能上線前,本分享頁顯示示範內容。"
   },
+  "footer": {
+    "product": "產品",
+    "account": "帳號",
+    "community": "社群",
+    "soon": "社群帳號即將上線。",
+    "rights": "© 2026 FigureShot Lab 保留一切權利。"
+  },
   "common": {
     "placeholder": "即將推出——此頁為專案初始化的佔位頁。",
     "close": "關閉",

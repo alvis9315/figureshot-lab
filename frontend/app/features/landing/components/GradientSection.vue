@@ -10,7 +10,7 @@
       #26282a 74%,
       var(--fs-bg) 94%)"
   >
-    <div class="mx-auto max-w-6xl px-4 pt-56 md:pt-72">
+    <div class="mx-auto max-w-6xl px-4 pt-40 md:pt-52">
       <h2 class="font-display text-4xl font-bold uppercase leading-none tracking-tight text-fs-text/90 md:text-6xl">
         {{ title }}
       </h2>

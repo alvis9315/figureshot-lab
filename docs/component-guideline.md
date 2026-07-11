@@ -65,6 +65,7 @@
 | ShelfSection | Feature(landing) | 標題 + 慣性卡片櫥窗;size 變體:sm 直幅小卡 / lg Apple 式大卡+圖下說明 | / 03 段(lg) |
 | BaseMedia | Base | 圖/影媒體格:video 附圓形播放/暫停鈕,無素材吃 fallback 漸層 | 櫥窗卡,未來收藏照/大圖 |
 | PinnedStorySection | Feature(landing) | 定格滾動敘事(sticky pin + 滾動進度驅動文字穿越;reduced-motion 靜態) | / 宣言段 |
+| TheFooter | Layout | 正式 footer:品牌 + 產品/帳號/社群欄 + 版權細字(Apple 式) | 兩個 layout |
 | FeatureStorySection | Feature(landing) | 單段功能敘事(scroll reveal,可翻轉) | / ×3 |
 | QuickSpinSection | Feature(landing) | 輪盤快抽入口(擁有者決策:輪盤意象放首頁) | / |
 | ModeSwitch | Feature(generator) | Pair / Squad / Crossover 切換 | /generator |

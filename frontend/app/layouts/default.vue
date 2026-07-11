@@ -1,7 +1,8 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <header class="border-b border-fs-surface">
-      <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-3">
+    <!-- 固定半透明頂部列(與 landing 同款,2026-07-12) -->
+    <header class="sticky top-0 z-40 border-b border-fs-text/5 bg-fs-bg/70 backdrop-blur-md">
+      <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-2.5">
         <NuxtLink :to="localePath('/')" class="font-semibold tracking-wide text-fs-accent">
           {{ $t('app.name') }}
         </NuxtLink>
@@ -23,9 +24,7 @@
     <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
       <slot />
     </main>
-    <footer class="border-t border-fs-surface px-4 py-4 text-center text-xs text-fs-muted">
-      {{ $t('app.footer') }}
-    </footer>
+    <TheFooter />
   </div>
 </template>
 

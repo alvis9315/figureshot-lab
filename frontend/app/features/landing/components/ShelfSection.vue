@@ -1,17 +1,16 @@
 <template>
   <!-- 卡片櫥窗區塊 v3:size 變體(sm=直幅小卡 / lg=Apple 式大卡+圖下說明,2026-07-12)
        卡片媒體走 BaseMedia:填 video/image 即換素材,video 附播放鈕 -->
-  <section class="relative overflow-hidden py-16 md:py-24">
-    <div class="mx-auto max-w-6xl px-4">
-      <div class="max-w-lg">
-        <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-fs-muted">{{ label }}</p>
-        <h2 class="mt-3 text-3xl font-semibold md:text-4xl">{{ title }}</h2>
-        <p class="mt-3 max-w-md text-fs-muted">{{ description }}</p>
-        <div class="mt-5 flex items-center gap-4">
-          <BaseButton :to="to">{{ cta }} →</BaseButton>
-          <span class="hidden font-mono text-[10px] uppercase tracking-wider text-fs-muted/60 md:inline">{{ $t('landing.shelf.hint') }}</span>
-        </div>
+  <section class="relative overflow-hidden py-16 pb-28 md:py-24 md:pb-36">
+    <!-- 標題區置中(擁有者校正 2026-07-12);CTA 置中、拖曳提示移至按鈕下方 -->
+    <div class="mx-auto flex max-w-2xl flex-col items-center px-4 text-center">
+      <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-fs-muted">{{ label }}</p>
+      <h2 class="mt-3 text-3xl font-semibold md:text-4xl">{{ title }}</h2>
+      <p class="mt-3 max-w-md text-fs-muted">{{ description }}</p>
+      <div class="mt-6">
+        <BaseButton :to="to" size="lg">{{ cta }} →</BaseButton>
       </div>
+      <p class="mt-3 font-mono text-[10px] uppercase tracking-wider text-fs-muted/60">{{ $t('landing.shelf.hint') }}</p>
     </div>
 
     <!-- 全寬書架:loop 讓卡片左右無邊界連續流動 -->

@@ -1,6 +1,7 @@
 <template>
-  <!-- 漸入由頁面層的 RevealSection 包覆(動畫模組化,2026-07-12) -->
-  <section class="mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 py-20 text-center md:py-28">
+  <!-- 漸入由頁面層的 RevealSection 包覆;min-h + 置中讓本段自成完整一屏,
+       與上方書架說明文字隔開(擁有者回饋 2026-07-12) -->
+  <section class="mx-auto flex min-h-[92vh] max-w-5xl flex-col items-center justify-center gap-8 px-4 py-24 text-center">
     <!-- 輪盤意象:擁有者決策(2026-07-12)——輪盤放首頁作快速抽選入口,核心工具是 /generator -->
     <div class="relative h-52 w-52 md:h-64 md:w-64" aria-hidden="true">
       <div
