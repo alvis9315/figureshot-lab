@@ -11,6 +11,10 @@
 - 大量留白與大圖 Showcase;避免企業 SaaS 儀表板感。
 - 字階:標題用 clamp() 流動字級;內文 16px 基準。
 
+## Generator 頁次風格:現代遊戲選角語彙(2026-07-12 擁有者定向)
+
+擁有者回饋 Generator 太中規中矩,要求遊戲選角化;二選一裁決採**現代遊戲科技感**(hero-team-select-modern / Rivals 路線),不走復古街機(guide 對經典圖的 Avoid 已排除高飽和邊框與老式字體)。語彙:斜切平行四邊形卡(`.fs-skew-card`)、亮底深字名牌條、斜切 tab(`.fs-plate`)、低調斜向掃描紋背景(`.fs-game-bg`)、手機 A **VS** B 對峙。仍在深色電影 token 系統內,MvC 借結構(中央池 + 左右對峙)、Rivals 借皮(幾何與名牌)。此語彙**只用於 Generator**,Landing/Result 維持編輯感,不得全站蔓延。
+
 ## 元件規則
 
 - 重複 pattern 抽成 component;className 不可超長重複貼。

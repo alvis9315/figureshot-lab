@@ -1,13 +1,15 @@
 <template>
-  <div class="inline-flex rounded-full border border-fs-muted/25 bg-fs-surface p-1" role="tablist">
+  <div class="flex gap-1.5" role="tablist">
     <button
       v-for="m in modes"
       :key="m"
       type="button"
       role="tab"
       :aria-selected="modelValue === m"
-      class="rounded-full px-4 py-1.5 text-sm transition duration-150"
-      :class="modelValue === m ? 'bg-fs-accent text-fs-bg' : 'text-fs-muted hover:text-fs-text'"
+      class="fs-plate px-5 py-2 font-mono text-xs font-semibold uppercase tracking-widest transition duration-150"
+      :class="modelValue === m
+        ? 'bg-fs-accent text-fs-bg'
+        : 'bg-fs-surface text-fs-muted hover:bg-fs-surface/70 hover:text-fs-text'"
       @click="$emit('update:modelValue', m)"
     >
       {{ $t(`generator.mode.${m}`) }}

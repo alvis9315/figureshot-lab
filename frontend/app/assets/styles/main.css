@@ -92,6 +92,25 @@ h1, h2, h3 {
 }
 .panel-up { animation: panel-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
+/* ===== Generator 遊戲選角語彙(2026-07-12 擁有者定向:現代遊戲科技感,參考 hero-team-select-modern)===== */
+
+/* 斜切平行四邊形卡(Rivals 名牌條/角色帶的幾何) */
+.fs-skew-card {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+/* 小型斜切板(tab、名牌) */
+.fs-plate {
+  clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+}
+/* 選角場景背景:低調斜向掃描紋 */
+.fs-game-bg {
+  background-image: repeating-linear-gradient(
+    115deg,
+    transparent 0 46px,
+    color-mix(in srgb, var(--fs-text) 3%, transparent) 46px 48px
+  );
+}
+
 /* 無障礙:reduced motion 時停位移、保留 opacity(spec 第 8 節) */
 @media (prefers-reduced-motion: reduce) {
   .reveal { transform: none; transition: opacity 0.3s ease-out; }

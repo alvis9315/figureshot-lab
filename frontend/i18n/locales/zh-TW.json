@@ -41,6 +41,8 @@
     }
   },
   "generator": {
+    "kicker": "選擇你的出戰模型",
+    "vs": "VS",
     "mode": {
       "pair": "配對",
       "squad": "小隊",

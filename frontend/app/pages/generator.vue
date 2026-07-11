@@ -1,20 +1,26 @@
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="fs-game-bg flex flex-col gap-6">
     <header class="flex flex-col items-center gap-4 text-center">
-      <h1 class="text-3xl font-semibold">{{ $t('nav.generator') }}</h1>
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-fs-accent">{{ $t('generator.kicker') }}</p>
+      <h1 class="text-3xl font-semibold uppercase tracking-wide">{{ $t('nav.generator') }}</h1>
       <ModeSwitch v-model="mode" />
       <p v-if="mode === 'crossover'" class="text-xs text-fs-muted">{{ $t('generator.crossoverHint') }}</p>
     </header>
 
-    <!-- Squad:三格橫列在池上方;Pair/Crossover:左右對峙(桌機),手機一律橫列置頂 -->
+    <!-- Squad:三格橫列在池上方;Pair/Crossover:左右對峙(桌機),手機 A vs B 置頂 -->
     <div :class="mode === 'squad' ? 'flex flex-col gap-6' : 'grid gap-6 lg:grid-cols-[1fr_2fr_1fr] lg:items-start'">
-      <div :class="mode === 'squad' ? 'grid grid-cols-3 gap-3 md:mx-auto md:w-2/3' : 'grid grid-cols-2 gap-3 lg:order-none lg:grid-cols-1'">
+      <div :class="mode === 'squad' ? 'grid grid-cols-3 gap-3 md:mx-auto md:w-2/3' : 'grid grid-cols-[1fr_auto_1fr] items-center gap-2 lg:grid-cols-1'">
         <SlotCard
           :figure="slots[0] ?? null"
           :locked="locks[0] ?? false"
           :label="$t('generator.slotLabel', { n: 'A' })"
           @toggle-lock="toggleLock(0)"
         />
+        <span
+          v-if="mode !== 'squad'"
+          class="font-display text-2xl font-bold italic text-fs-accent lg:hidden"
+          aria-hidden="true"
+        >{{ $t('generator.vs') }}</span>
         <SlotCard
           v-if="mode === 'squad'"
           :figure="slots[1] ?? null"

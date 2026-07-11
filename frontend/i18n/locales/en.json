@@ -41,6 +41,8 @@
     }
   },
   "generator": {
+    "kicker": "Select your figures",
+    "vs": "VS",
     "mode": {
       "pair": "Pair",
       "squad": "Squad",

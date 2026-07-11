@@ -22,10 +22,12 @@
 
 - **Wave 2 完成**(擁有者下令開工):①StyleScenePicker——風格 4 卡(Cinematic/街頭/溫暖日常/霓虹東京,漸層占位)+ 場景/情緒/任務 tag 群,整進 Generator 同頁分段,選擇會反映到 ResultPanel;②CharacterDetailPanel——FigureCard 加 ⓘ,BaseSheet(手機 bottom sheet / 桌機 modal)顯示詳情,可直接放入欄位;③分享頁 /share/[id]——SSR + OG/Twitter meta(兌現 ADR-0001 選 Nuxt 的理由),ResultPanel 分享鈕改為可用連結;④等寬字點綴套用於控制台標籤。build + SSR smoke(generator 風格卡、share OG、zh-TW)全過。
 
+- **Generator 選角化改造**(擁有者回饋:太中規中矩,要遊戲選角感;裁決採現代遊戲科技感,復古被 guide Avoid 排除):FigureCard 改斜切卡 + 亮底名牌條、SlotCard 同語彙 + 名牌、ModeSwitch 斜切 tab、頁面加掃描紋背景與「Select your figures」kicker、手機 Pair 模式 A VS B。新 utility:.fs-skew-card/.fs-plate/.fs-game-bg。語彙僅限 Generator 頁。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。
-- Wave 3(待指示):Collection/History 版面、Loading/Error 態(接 API 時)。
+- Wave 3(提案已交,待擁有者確認):Collection/History 版面、Login 正式化。
 
 ## 2026-07-11
 
