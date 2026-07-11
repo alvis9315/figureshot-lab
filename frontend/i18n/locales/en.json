@@ -38,6 +38,20 @@
       "next": "Next slide",
       "goto": "Go to slide {n}"
     },
+    "media": {
+      "featured": "Featured scene"
+    },
+    "shelf": {
+      "hint": "Drag to explore",
+      "cards": {
+        "c1": "Overtime at the End of the World",
+        "c2": "Duel at the Vending Machine",
+        "c3": "Picnic with a Rival",
+        "c4": "Neon Alley Patrol",
+        "c5": "Beach Day Rescue",
+        "c6": "Convenience Store Standoff"
+      }
+    },
     "showcase": {
       "label": "Community shots",
       "title": "Your shots, your stage.",

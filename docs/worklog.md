@@ -34,6 +34,8 @@
 
 - **首頁節奏 v4**(擁有者三點回饋):①斜切不再咬進 Hero,切邊完整落於第一屏下,且亮帶 closeBottom 底邊也斜切成平行四邊形色帶;②黑白線性漸層不自然 → 改「**光暈溢出**」轉場(LightSpillSection:暗區頂部柔光,像上方白帶的光灑下,貼攝影主題),GradientSection 刪除;③03 文字框(卡片盒)棄用 → 無框編輯式排版(accent 豎線 + 文字直壓滿版,首次使用的手法)。
 
+- **首頁節奏 v5**(擁有者回饋):①漸層回歸細緻版——暖色階多停點(米→暖褐→深棕→黑),不再灰階直混;②02 改 Apple Fitness+ 式 MediaShowcaseSection(一大圖 21:9 + 下排四小圖);③03 改 Apple News 式 ShelfSection + **BaseShelf 慣性滑動容器**(momentum scrolling:滑鼠拖曳、放手速度衰減滑出、snap-proximity 緩停、拖曳後抑制誤點;觸控用原生慣性);LightSpillSection 刪除、FullBleedBlock 轉備用。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

@@ -24,8 +24,10 @@
 | HeroCarousel | 滿版破題輪播 | Apple / GM | ✅ |
 | AngledSection | **轉場**:斜切亮暗交替色帶 + 超大章節標題 | Rivals 角色詳情頁 | ✅ |
 | FeatureStorySection | **說明**:圖文並茂交替列(tone 亮暗) | Apple / Leica | ✅ |
-| FullBleedBlock | **章節開場/重點**:直角滿版 + 無框編輯式排版(accent 豎線,不用卡片盒) | Nothing / Rivals | ✅ |
-| LightSpillSection | **轉場**:光暈溢出——上方區塊的光灑進暗區頂部(黑白線性漸層經實測不自然,棄用) | 攝影打光主題 | ✅ |
+| FullBleedBlock | 直角滿版 + 無框編輯式排版(備用,現未上場) | Nothing / Rivals | ✅ |
+| GradientSection | **轉場**:細緻暖階漸層(米→暖褐→深棕→黑,多停點;灰階直混死灰已棄用) | 擁有者堅持漸層 | ✅ v2 |
+| MediaShowcaseSection | **展示**:一大圖 + 下排四小圖 | Apple Fitness+(擁有者追加) | ✅ |
+| ShelfSection + BaseShelf | **櫥窗**:標題 + 慣性滑動卡列(momentum scrolling + snap 緩停) | Apple News(擁有者追加) | ✅ |
 | QuickSpinSection | 輪盤快抽收尾 | — | ✅ |
 | StoryStrip 連環故事段 | 教學/品牌敘事 | Teenage Engineering 漫畫頁 | ⏸ 待插畫素材才建,適合未來「怎麼玩」頁,不進首頁 |
 
@@ -33,7 +35,7 @@
 1. **每滑一區換一種手法,同一手法一頁只出現一次**(斜切連用會無聊);轉場手法目前有:斜切(可 closeBottom 成平行四邊形色帶)、光暈溢出、直角滿版。**切邊不得出現在第一屏內**——區塊不與 Hero 重疊。
 2. 職責固定:滿版=開場/重點、圖文=說明、斜切/漸層=轉場;不得混用職責。
 3. **第一屏(100vh)不得露出下一區塊的切邊**——往下滑才發現新設計,驚喜要藏。
-4. 首頁定案節奏:HeroCarousel(滿版輪播)→ AngledSection 亮帶+01 圖文(斜切)→ GradientSection+02 圖文(漸層轉場)→ FullBleedBlock=03(直角滿版+資訊卡)→ QuickSpin(輪盤收尾)。
+4. 首頁定案節奏(2026-07-12 v5):HeroCarousel(滿版輪播)→ 斜切亮帶+01 圖文 → 細緻漸層+02 大圖小圖櫥窗 → 03 慣性滑動卡列(酒紅光)→ QuickSpin(輪盤收尾)。
 5. 新頁面要用區塊時從本表選,選不到才提新區塊(並登記 component-guideline)。
 
 **打光與色彩鐵律(2026-07-12 擁有者校正)**:

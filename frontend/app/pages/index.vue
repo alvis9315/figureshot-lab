@@ -4,7 +4,7 @@
          滿版輪播 → 斜切亮帶 → 漸層轉場 → 滿版資訊卡 → 輪盤;規則見 docs/ui-style-guide.md -->
     <HeroCarousel />
 
-    <AngledSection :title="$t('landing.story1.kicker')" tone="light" slant="right" close-bottom>
+    <AngledSection :title="$t('landing.story1.kicker')" tone="light" slant="right">
       <RevealSection>
         <FeatureStorySection
           kicker="01"
@@ -16,25 +16,21 @@
       </RevealSection>
     </AngledSection>
 
-    <LightSpillSection :title="$t('landing.story2.kicker')">
+    <GradientSection :title="$t('landing.story2.kicker')">
       <RevealSection>
-        <FeatureStorySection
-          kicker="02"
-          :title="$t('landing.story2.title')"
-          :description="$t('landing.story2.desc')"
-          flip
-          :accent-strength="8"
-        />
+        <MediaShowcaseSection />
       </RevealSection>
-    </LightSpillSection>
+    </GradientSection>
 
-    <FullBleedBlock
-      :label="`03 · ${$t('landing.story3.kicker')}`"
-      :title="$t('landing.story3.title')"
-      :description="$t('landing.story3.desc')"
-      :cta="$t('landing.showcase.cta')"
-      :to="localePath('/share/demo')"
-    />
+    <RevealSection>
+      <ShelfSection
+        :label="`03 · ${$t('landing.story3.kicker')}`"
+        :title="$t('landing.story3.title')"
+        :description="$t('landing.story3.desc')"
+        :cta="$t('landing.showcase.cta')"
+        :to="localePath('/share/demo')"
+      />
+    </RevealSection>
 
     <RevealSection>
       <QuickSpinSection />
@@ -45,9 +41,10 @@
 <script setup lang="ts">
 import HeroCarousel from '~/features/landing/components/HeroCarousel.vue'
 import AngledSection from '~/features/landing/components/AngledSection.vue'
-import LightSpillSection from '~/features/landing/components/LightSpillSection.vue'
+import GradientSection from '~/features/landing/components/GradientSection.vue'
 import FeatureStorySection from '~/features/landing/components/FeatureStorySection.vue'
-import FullBleedBlock from '~/features/landing/components/FullBleedBlock.vue'
+import MediaShowcaseSection from '~/features/landing/components/MediaShowcaseSection.vue'
+import ShelfSection from '~/features/landing/components/ShelfSection.vue'
 import QuickSpinSection from '~/features/landing/components/QuickSpinSection.vue'
 
 definePageMeta({ layout: 'landing' })
