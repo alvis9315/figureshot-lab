@@ -1,0 +1,40 @@
+# Node / Nuxt
+node_modules/
+dist/
+.nuxt/
+.output/
+.nitro/
+.cache/
+coverage/
+
+# Java / Maven
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# Logs
+logs/
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Uploads / local data
+backend/uploads/
+*.sqlite3
+*.db
+
+# OS / editor
+.DS_Store
+.idea/
+*.iml
+.vscode/
