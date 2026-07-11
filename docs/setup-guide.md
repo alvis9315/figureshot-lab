@@ -25,6 +25,13 @@ docker compose up -d        # PostgreSQL 16 @ localhost:5432
 ./scripts/run-frontend.sh   # http://localhost:3000
 ```
 
+## Docker 使用規範(本機資源管理)
+
+- **不開發時整個關掉 Docker Desktop**(選單列鯨魚圖示 → Quit Docker Desktop),避免 VM 常駐吃 1~2 GB 記憶體;容器會隨之自動停止,資料保留在 volume 不會消失。
+- 開發時再開:啟動 Docker Desktop → `docker compose up -d` → 開工。
+- `docker compose stop`:只停容器(資料留著,平常用這個就好);`docker compose down -v`:連資料一起清(只在要重建 DB 時用)。
+- Docker Desktop 設定建議:Resources → Memory 上限設 2~3 GB(單一 Postgres 容器用不到更多)。
+
 ## 常見問題
 
 - `Unable to locate a Java Runtime`:JAVA_HOME 未設,見上方。

@@ -11,11 +11,13 @@
 ## 常用指令
 
 ```bash
-docker compose up -d                  # 本機 PostgreSQL
+docker compose up -d                  # 本機 PostgreSQL(需先啟動 Docker Desktop)
 ./scripts/run-backend.sh              # 後端(需 Java 21)
 ./scripts/run-frontend.sh             # 前端(需 Node 22,先 nvm use)
 ./scripts/check.sh                    # 完成前必跑:後端 test + 前端 build
 ```
+
+Docker 使用規範:**不開發時整個關掉 Docker Desktop**(避免 VM 常駐吃記憶體);工作結束若不再用 DB,提醒擁有者關閉。細節見 docs/setup-guide.md「Docker 使用規範」。
 
 ## 後端防呆(Spring Boot)
 
