@@ -17,6 +17,17 @@
   --fs-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
+/* ===== 配色方案 2:Blue Bottle(2026-07-12 擁有者新增)=====
+   比例:白底 60% / 藍 30% / 深灰 10%;只取顏色元素不抄版面。
+   證明 token 化:整套換膚只覆寫五個變數,元件零修改。 */
+[data-theme='bluebottle'] {
+  --fs-bg: #fbfaf6;
+  --fs-surface: #efeee8;
+  --fs-text: #2f3033;
+  --fs-text-muted: #666a6f;
+  --fs-accent: #2149c1; /* 鈷藍 */
+}
+
 @theme {
   --color-fs-bg: var(--fs-bg);
   --color-fs-surface: var(--fs-surface);

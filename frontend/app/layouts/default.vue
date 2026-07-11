@@ -13,10 +13,22 @@
           <NuxtLink :to="localePath('/login')" class="hover:text-fs-text">{{ $t('nav.login') }}</NuxtLink>
           <button
             type="button"
-            class="rounded border border-fs-surface px-2 py-1 hover:text-fs-text"
+            class="rounded border border-fs-surface px-2 py-0.5 hover:text-fs-text"
             @click="toggleLocale"
           >
             {{ locale === 'en' ? '中文' : 'EN' }}
+          </button>
+          <button
+            type="button"
+            class="flex h-6 w-6 items-center justify-center rounded-full border border-fs-surface transition hover:border-fs-muted"
+            :aria-label="$t('common.themeToggle')"
+            @click="toggle"
+          >
+            <span
+              class="h-3.5 w-3.5 rounded-full"
+              :style="theme === 'cinema' ? 'background:#2149c1' : 'background:#e8a33d'"
+              aria-hidden="true"
+            />
           </button>
         </div>
       </nav>
@@ -31,6 +43,7 @@
 <script setup lang="ts">
 const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
+const { theme, toggle } = useTheme()
 
 function toggleLocale() {
   setLocale(locale.value === 'en' ? 'zh-TW' : 'en')

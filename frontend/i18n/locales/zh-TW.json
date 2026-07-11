@@ -183,6 +183,7 @@
     "placeholder": "即將推出——此頁為專案初始化的佔位頁。",
     "close": "關閉",
     "play": "播放",
-    "pause": "暫停"
+    "pause": "暫停",
+    "themeToggle": "切換配色"
   }
 }

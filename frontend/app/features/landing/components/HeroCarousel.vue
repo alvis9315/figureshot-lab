@@ -113,11 +113,11 @@ const lightingStyle = computed(() => {
     radial-gradient(ellipse 45% 35% at ${x}% 44%, hsl(${h} ${s}% ${Math.min(l + 12, 70)}% / 0.16), transparent 65%)`
 })
 
-// 漸暗層:壓在文字側,照片進來後仍保可讀性
+// 可讀性層:壓在文字側;用 --fs-bg 調製,深色主題壓暗、淺色主題壓亮,雙配色皆可讀
 const shadeStyle = computed(() => ({
-  left: 'background: linear-gradient(90deg, rgb(13 13 15 / 0.72) 0%, rgb(13 13 15 / 0.25) 40%, transparent 65%)',
-  right: 'background: linear-gradient(270deg, rgb(13 13 15 / 0.72) 0%, rgb(13 13 15 / 0.25) 40%, transparent 65%)',
-  center: 'background: linear-gradient(180deg, transparent 35%, rgb(13 13 15 / 0.66) 100%)',
+  left: 'background: linear-gradient(90deg, color-mix(in srgb, var(--fs-bg) 72%, transparent) 0%, color-mix(in srgb, var(--fs-bg) 25%, transparent) 40%, transparent 65%)',
+  right: 'background: linear-gradient(270deg, color-mix(in srgb, var(--fs-bg) 72%, transparent) 0%, color-mix(in srgb, var(--fs-bg) 25%, transparent) 40%, transparent 65%)',
+  center: 'background: linear-gradient(180deg, transparent 35%, color-mix(in srgb, var(--fs-bg) 66%, transparent) 100%)',
 }[slide.value.align]))
 
 let timer: ReturnType<typeof setInterval> | null = null

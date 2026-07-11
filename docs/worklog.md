@@ -44,10 +44,12 @@
 
 - **首頁節奏 v9**(擁有者四點回饋):①02 卡片純色去混濁(飽和提高:hsl s42% l21%);②03 置中偏左=letter-spacing 尾端空隙,pl 補償;③銀漸層 v4——中段更亮更冷(#c9ced4 一帶)、尾段 10 停點平滑入黑消除交界;④**輪盤互動**:點擊 → 轉輪 1.75s(cubic-bezier 減速)→「配對成功!/開始旅程 →」→ 跳轉 /generator?spin=1 自動 randomize + 隨機風格場景 + 直接亮結果;reduced-motion 直接跳轉。
 
+- **雙配色方案**(擁有者需求,token 化驗收):新增 `bluebottle` 主題(60% 白 #fbfaf6 / 30% 鈷藍 #2149c1 / 10% 深灰 #2f3033,參考 Blue Bottle 僅取色彩元素)——實作 = main.css 覆寫 `[data-theme]` 五變數 + useTheme composable(cookie 持久化、SSR 無閃爍)+ 兩 layout 色票圓點切換鈕,**元件零修改**,證明元件化換膚成立。輪播可讀性遮罩改 color-mix(var(--fs-bg)) 雙主題通用。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。
-- Wave 3(提案已交,待擁有者確認):Collection/History 版面、Login 正式化。
+- Wave 3(擁有者:配色 OK 即開工):Collection/History 版面、Login 正式化。
 
 ## 2026-07-11
 

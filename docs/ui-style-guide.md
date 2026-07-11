@@ -11,6 +11,15 @@
 - 大量留白與大圖 Showcase;避免企業 SaaS 儀表板感。
 - 字階:標題用 clamp() 流動字級;內文 16px 基準。
 
+## 配色方案(2026-07-12 起雙主題)
+
+| 主題 | 定位 | token 值 |
+|---|---|---|
+| `cinema`(預設) | 深色電影感 | 近黑底 / 暖白字 / 暖橘 accent |
+| `bluebottle` | 白底鈷藍(比例 60% 白 / 30% 藍 / 10% 深灰;參考 Blue Bottle 只取色彩元素) | `#fbfaf6` 底 / `#2f3033` 深灰字 / `#2149c1` 鈷藍 accent |
+
+機制(token 化的驗收):換膚 = `main.css` 覆寫 `[data-theme]` 五個變數,**元件零修改**;header 色票圓點切換(圓點顯示切過去的顏色)、cookie 持久化、SSR 首屏即正確主題無閃爍(`useTheme` composable + app.vue 綁 htmlAttrs)。硬編色的例外(卡片深底、名牌條、漸層帶)為刻意跨主題不變項;遮罩一律用 `color-mix(var(--fs-bg))` 調製以雙主題可讀。新增第三主題:加一段變數覆寫即可。
+
 ## Generator 頁次風格:現代遊戲選角語彙(2026-07-12 擁有者定向)
 
 擁有者回饋 Generator 太中規中矩,要求遊戲選角化;二選一裁決採**現代遊戲科技感**(hero-team-select-modern / Rivals 路線),不走復古街機(guide 對經典圖的 Avoid 已排除高飽和邊框與老式字體)。語彙:斜切平行四邊形卡(`.fs-skew-card`)、亮底深字名牌條、斜切 tab(`.fs-plate`)、低調斜向掃描紋背景(`.fs-game-bg`)、手機 A **VS** B 對峙。仍在深色電影 token 系統內,MvC 借結構(中央池 + 左右對峙)、Rivals 借皮(幾何與名牌)。此語彙**只用於 Generator**,Landing/Result 維持編輯感,不得全站蔓延。

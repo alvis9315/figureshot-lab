@@ -183,6 +183,7 @@
     "placeholder": "Coming soon — this page is a placeholder from project initialization.",
     "close": "Close",
     "play": "Play",
-    "pause": "Pause"
+    "pause": "Pause",
+    "themeToggle": "Switch color theme"
   }
 }
