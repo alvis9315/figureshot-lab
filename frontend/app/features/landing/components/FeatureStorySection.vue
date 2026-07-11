@@ -1,8 +1,8 @@
 <template>
+  <!-- 漸入由頁面層的 RevealSection 包覆(動畫模組化,2026-07-12) -->
   <section
-    ref="target"
-    class="reveal mx-auto grid max-w-5xl items-center gap-8 px-4 py-20 md:grid-cols-2 md:py-28"
-    :class="[{ 'reveal-in': revealed }, flip ? 'md:[&>div:first-child]:order-2' : '']"
+    class="mx-auto grid max-w-5xl items-center gap-8 px-4 py-20 md:grid-cols-2 md:py-28"
+    :class="flip ? 'md:[&>div:first-child]:order-2' : ''"
   >
     <!-- 視覺占位:待模型攝影素材(guide: apple-feature-entertainment 段落節奏) -->
     <div
@@ -11,7 +11,7 @@
       aria-hidden="true"
     />
     <div class="flex flex-col gap-4">
-      <p class="text-sm uppercase tracking-[0.3em] text-fs-accent">{{ kicker }}</p>
+      <p class="font-mono text-sm uppercase tracking-[0.3em] text-fs-accent">{{ kicker }}</p>
       <h2 class="text-3xl font-semibold md:text-4xl">{{ title }}</h2>
       <p class="max-w-md text-fs-muted">{{ description }}</p>
     </div>
@@ -26,6 +26,4 @@ withDefaults(defineProps<{
   flip?: boolean
   accentStrength?: number
 }>(), { flip: false, accentStrength: 10 })
-
-const { target, revealed } = useReveal()
 </script>

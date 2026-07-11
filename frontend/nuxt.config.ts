@@ -3,6 +3,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-11',
   modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
+  // Base 元件以檔名註冊(BaseButton 而非 CommonBaseButton)
+  components: [{ path: '~/components', pathPrefix: false }],
   css: ['@fontsource-variable/space-grotesk', '~/assets/styles/main.css'],
   vite: {
     plugins: [tailwindcss()],

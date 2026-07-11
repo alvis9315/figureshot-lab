@@ -24,6 +24,9 @@
 
 - **Generator 選角化改造**(擁有者回饋:太中規中矩,要遊戲選角感;裁決採現代遊戲科技感,復古被 guide Avoid 排除):FigureCard 改斜切卡 + 亮底名牌條、SlotCard 同語彙 + 名牌、ModeSwitch 斜切 tab、頁面加掃描紋背景與「Select your figures」kicker、手機 Pair 模式 A VS B。新 utility:.fs-skew-card/.fs-plate/.fs-game-bg。語彙僅限 Generator 頁。
 
+- **HeroCarousel + 動畫模組化**(擁有者需求):首頁 Hero 改滿版自動輪播 3 張破題(5s、crossfade、hover 暫停、圓點/箭頭、reduced-motion 不自動播);輪盤區不動。新增 Base 元件 RevealSection,滾動漸入正式元件化,landing 區段改由頁面層包覆。
+- **修重大 SSR bug**:①BaseButton 的 resolveComponent 寫法改條件分支;②Nuxt 元件自動註冊預設 pathPrefix 使 `components/common/BaseButton.vue` 註冊成 CommonBaseButton,模板的 `<BaseButton>` 全數解析失敗——**Wave 1 起所有 Base 元件(含 CTA、Randomize/Generate 鈕、BaseSheet)在頁面上從未渲染**;nuxt.config 設 `pathPrefix: false` 修復,四頁 smoke 驗證按鈕齊全、警告歸零。教訓:smoke 只 grep 文字不夠,關鍵互動元素要逐一驗證。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

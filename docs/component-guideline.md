@@ -55,7 +55,8 @@
 | BaseButton | Base | 按鈕(primary/ghost/outline × md/lg,可作連結) | 全站 |
 | BaseTag | Base | 標籤 / 篩選 chip(active 態) | generator 篩選、結果標籤 |
 | layouts/landing | Layout | 透明 header 疊滿版 Hero 的首頁殼 | / |
-| HeroSection | Feature(landing) | 滿版 Hero:進場動畫 + 破題 + 雙 CTA | / |
+| HeroCarousel | Feature(landing) | 滿版破題輪播(3 張、自動播放 5s、hover 暫停、圓點/箭頭、reduced-motion 不自動播);取代原 HeroSection | / |
+| RevealSection | Base | 滾動漸入標準容器(包住任何區塊即得 reveal;動畫模組化入口) | / 各區段 |
 | FeatureStorySection | Feature(landing) | 單段功能敘事(scroll reveal,可翻轉) | / ×3 |
 | QuickSpinSection | Feature(landing) | 輪盤快抽入口(擁有者決策:輪盤意象放首頁) | / |
 | ModeSwitch | Feature(generator) | Pair / Squad / Crossover 切換 | /generator |
