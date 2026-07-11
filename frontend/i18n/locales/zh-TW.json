@@ -54,7 +54,8 @@
         "c3": "和宿敵野餐",
         "c4": "霓虹巷弄巡邏",
         "c5": "海灘救援日",
-        "c6": "便利商店對峙"
+        "c6": "便利商店對峙",
+        "c7": "黃昏頂樓演唱會"
       }
     },
     "showcase": {
@@ -171,6 +172,58 @@
     "cta": "我也要創作",
     "backHome": "認識 FigureShot Lab",
     "demoNote": "預覽版:儲存靈感功能上線前,本分享頁顯示示範內容。"
+  },
+  "collection": {
+    "add": "新增模型",
+    "searchPlaceholder": "搜尋名稱、系列或廠牌…",
+    "statusLabel": "狀態",
+    "status": {
+      "all": "全部",
+      "owned": "持有",
+      "wishlist": "願望清單",
+      "preorder": "預購中"
+    },
+    "type": {
+      "action": "可動模型",
+      "pvc": "PVC 雕像",
+      "chibi": "Q 版"
+    },
+    "empty": {
+      "title": "沒有符合的模型",
+      "desc": "換個篩選條件,或新增你的第一隻收藏。",
+      "cta": "新增模型"
+    },
+    "sendToGenerator": "帶進靈感產生器",
+    "detailNote": "示範資料——登入後顯示你的真實收藏。",
+    "demoNote": "預覽版:帳號與 API 接線前顯示示範收藏。",
+    "form": {
+      "title": "新增模型",
+      "name": "名稱",
+      "brand": "廠牌",
+      "series": "系列",
+      "character": "角色名",
+      "type": "類型",
+      "scale": "比例",
+      "scaleFree": "無比例",
+      "status": "持有狀態",
+      "tags": "標籤",
+      "photo": "照片",
+      "photoHint": "照片上傳將於 API 接線後開放。",
+      "submit": "儲存",
+      "demoNote": "預覽版:儲存將於帳號功能上線後啟用。"
+    }
+  },
+  "history": {
+    "savedOn": "儲存於",
+    "demoNote": "預覽版:儲存靈感上線前顯示示範紀錄。"
+  },
+  "login": {
+    "email": "Email",
+    "password": "密碼",
+    "submit": "登入",
+    "noAccount": "還沒有帳號?",
+    "register": "註冊(即將開放)",
+    "demoNote": "登入將於帳號系統上線後開放。"
   },
   "search": {
     "open": "搜尋",

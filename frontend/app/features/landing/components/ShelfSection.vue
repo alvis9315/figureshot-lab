@@ -77,11 +77,11 @@ const cards = demoInspirations
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]
 
-// 卡片底(2026-07-12):cinema=黃、白、白循環;bluebottle=深灰純色
+// 卡片底(2026-07-12 定版):cinema=一黃一白交替(卡數 7×2=14,接縫不重色);bluebottle=深灰純色
 const { theme } = useTheme()
 
 function cardFallback(index: number) {
   if (theme.value === 'bluebottle') return 'background:#2f3033'
-  return index % 3 === 0 ? 'background: var(--fs-accent)' : 'background:#f5f2ec'
+  return index % 2 === 0 ? 'background: var(--fs-accent)' : 'background:#f5f2ec'
 }
 </script>

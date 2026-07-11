@@ -54,7 +54,8 @@
         "c3": "Picnic with a Rival",
         "c4": "Neon Alley Patrol",
         "c5": "Beach Day Rescue",
-        "c6": "Convenience Store Standoff"
+        "c6": "Convenience Store Standoff",
+        "c7": "Rooftop Concert at Dusk"
       }
     },
     "showcase": {
@@ -171,6 +172,58 @@
     "cta": "Create your own",
     "backHome": "About FigureShot Lab",
     "demoNote": "Preview build: this share page shows demo content until saved inspirations go live."
+  },
+  "collection": {
+    "add": "Add figure",
+    "searchPlaceholder": "Search name, series, or brand…",
+    "statusLabel": "Status",
+    "status": {
+      "all": "All",
+      "owned": "Owned",
+      "wishlist": "Wishlist",
+      "preorder": "Pre-order"
+    },
+    "type": {
+      "action": "Action figure",
+      "pvc": "PVC statue",
+      "chibi": "Chibi"
+    },
+    "empty": {
+      "title": "No figures match",
+      "desc": "Try another filter, or add your first figure.",
+      "cta": "Add figure"
+    },
+    "sendToGenerator": "Use in Generator",
+    "detailNote": "Demo data — your real collection appears after sign-in.",
+    "demoNote": "Preview build: sample collection until accounts and the API are wired up.",
+    "form": {
+      "title": "Add figure",
+      "name": "Name",
+      "brand": "Brand",
+      "series": "Series",
+      "character": "Character",
+      "type": "Type",
+      "scale": "Scale",
+      "scaleFree": "Non-scale",
+      "status": "Ownership",
+      "tags": "Tags",
+      "photo": "Photo",
+      "photoHint": "Photo upload opens once the API is wired up.",
+      "submit": "Save",
+      "demoNote": "Preview build: saving activates once accounts are live."
+    }
+  },
+  "history": {
+    "savedOn": "Saved on",
+    "demoNote": "Preview build: sample records until saved inspirations go live."
+  },
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log in",
+    "noAccount": "No account yet?",
+    "register": "Sign up (coming soon)",
+    "demoNote": "Sign-in opens once accounts are live."
   },
   "search": {
     "open": "Search",

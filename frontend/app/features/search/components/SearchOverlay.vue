@@ -77,7 +77,6 @@
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { demoStyles } from '~/features/style/constants/demoStyles'
 import { demoInspirations } from '~/features/landing/constants/demoInspirations'
-import InspirationCard from './InspirationCard.vue'
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits<{ close: [] }>()

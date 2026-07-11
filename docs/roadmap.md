@@ -23,7 +23,7 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 未開始 | 資料模板可先出 |
 | PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 未開始 | 降低對 AI 的完全依賴 |
 | PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 未開始 | 定稿後轉 Mermaid 入 architecture.md |
-| PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | 開發中 | 升級為高保真落地(靜態 UI + 動畫、不接 API,2026-07-12 擁有者核准);第一波 Landing + Generator。決策:核心頁路由 /generator、輪盤意象放首頁、Result 為 Generator 同頁面板 |
+| PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | **已完成** | 升級為高保真落地(靜態 UI + 動畫、不接 API):Landing/Generator/Style/Result/分享頁(Wave 1-2)+ Collection/新增表單/History/Login(Wave 3,2026-07-12)——全頁脫離佔位,雙主題 |
 | PRE-009 | 技術 ADR | 前端、後端、DB、Auth、Storage、AI Provider 均有決策紀錄 | **已完成** | `docs/adr/0001~0004`(2026-07-11 定案) |
 | PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 未開始 | KPI 清單已在 spec 20F,待定門檻值 |
 

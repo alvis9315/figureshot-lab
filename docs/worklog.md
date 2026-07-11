@@ -62,10 +62,13 @@
 
 - **Reveal 改重播**(擁有者定版,覆寫 motion spec「觸發一次」預設):useReveal 改為進出視口即切換——每次滾回來都重播漸入;離開時同步重置(帶退場感)。單點修改,RevealSection 包覆的所有區塊(01/02 圖文、書架、輪盤)全數生效。書架卡另改黃白白循環。
 
+- **書架卡定版**:補第 7 張示範卡(黃昏頂樓演唱會),一黃一白交替(7×2=14,loop 接縫不重色);另分享頁淺色版改藍卡、書架預設置中(Embla align center)、01 文字欄靠上對齊。
+- **Wave 3 完成**(擁有者核准開工):①/collection——收藏 grid(2/3/4 欄 RWD)+ 搜尋/狀態篩選 + CollectionCard(狀態 badge)+ BaseSheet 詳情(可帶進產生器)+ BaseEmptyState 空態;②/collection/new——欄位對齊 data-model 的靜態表單(類型/狀態/標籤 chips、照片區佔位、儲存待 API);③/history——InspirationCard(升級為 Base 共用)+ 儲存日期;④/login——正式表單(登入待帳號系統);示範資料 demoCollection 對齊 figures 表。五頁全部脫離佔位,PRE-008 標已完成。
+
 ### Next
 
-- PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。
-- Wave 3(擁有者:配色 OK 即開工):Collection/History 版面、Login 正式化。
+- PRE 閘門剩餘:PRE-002 訪談、003 競品、005/006 種子素材、007 User Flow、010 驗證計畫。
+- 前端下一步:接 API(待 PRE 閘門 + 後端 P0 功能);Loading/Error 態屆時補。
 
 ## 2026-07-11
 

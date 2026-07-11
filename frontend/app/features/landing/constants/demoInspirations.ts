@@ -17,4 +17,5 @@ export const demoInspirations: DemoInspiration[] = [
   { key: 'c4', style: 'neoTokyo', hue: 300 },
   { key: 'c5', style: 'warmDaily', hue: 150 },
   { key: 'c6', style: 'street', hue: 20 },
+  { key: 'c7', style: 'neoTokyo', hue: 260 },
 ]
