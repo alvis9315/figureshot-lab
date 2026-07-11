@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "FigureShot Lab",
+    "tagline": "Figure photography inspiration",
+    "footer": "FigureShot Lab — shoot what you collect."
+  },
+  "nav": {
+    "collection": "Collection",
+    "wheel": "Inspiration Wheel",
+    "history": "History",
+    "login": "Log in"
+  },
+  "landing": {
+    "question": "What do you want to shoot today?",
+    "subtitle": "Turn your figure collection into photo ideas, pairings, posing tips, and social-ready captions.",
+    "cta": "Spin the wheel"
+  },
+  "common": {
+    "placeholder": "Coming soon — this page is a placeholder from project initialization."
+  }
+}

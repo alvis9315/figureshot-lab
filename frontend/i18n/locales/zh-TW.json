@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "FigureShot Lab",
+    "tagline": "模型攝影靈感",
+    "footer": "FigureShot Lab — 讓收藏被重新拍起來。"
+  },
+  "nav": {
+    "collection": "收藏庫",
+    "wheel": "靈感輪盤",
+    "history": "靈感紀錄",
+    "login": "登入"
+  },
+  "landing": {
+    "question": "今天想拍哪一隻?",
+    "subtitle": "把你的模型收藏變成攝影主題、角色搭配、擺拍建議與社群文案。",
+    "cta": "轉動輪盤"
+  },
+  "common": {
+    "placeholder": "即將推出——此頁為專案初始化的佔位頁。"
+  }
+}

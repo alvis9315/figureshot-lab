@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* Design tokens — Cinematic Editorial Workspace 暫定基調
+   Moodboard(PRE-004)定稿後只改這裡,不散落覆寫 */
+:root {
+  --fs-bg: #0d0d0f;
+  --fs-surface: #17171b;
+  --fs-text: #f5f2ec;
+  --fs-text-muted: #9b968c;
+  --fs-accent: #e8a33d; /* 攝影棚燈暖橘 */
+}
+
+@theme {
+  --color-fs-bg: var(--fs-bg);
+  --color-fs-surface: var(--fs-surface);
+  --color-fs-text: var(--fs-text);
+  --color-fs-muted: var(--fs-text-muted);
+  --color-fs-accent: var(--fs-accent);
+}
+
+body {
+  background-color: var(--fs-bg);
+  color: var(--fs-text);
+}
