@@ -3,11 +3,12 @@
     <!-- 分享頁:SSR + OG meta 是選 Nuxt 的核心理由(ADR-0001);版面借 gentle-monster-detail-focus 編輯感 -->
     <p class="font-mono text-xs uppercase tracking-[0.3em] text-fs-accent">{{ $t('share.kicker') }}</p>
 
+    <!-- 淺色版 #02a8e0 純色;深色版打光漸層(2026-07-12) -->
     <div
       class="aspect-[4/3] w-full rounded-2xl"
-      style="background:
+      :style="isLight ? 'background:#02a8e0' : `background:
         radial-gradient(ellipse 70% 60% at 50% 40%, color-mix(in srgb, var(--fs-accent) 24%, transparent), transparent 72%),
-        linear-gradient(160deg, #17171b 0%, #0d0d0f 100%);"
+        linear-gradient(160deg, #17171b 0%, #0d0d0f 100%)`"
       aria-hidden="true"
     />
 
@@ -31,8 +32,12 @@
 
 <script setup lang="ts">
 // 靜態展示:route param 先不消費,真實分享 id 待 API 接線(saved_inspirations)
+import { computed } from 'vue'
+
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { theme } = useTheme()
+const isLight = computed(() => theme.value === 'bluebottle')
 
 useSeoMeta({
   title: () => `${t('generator.result.demoTitle')} — ${t('app.name')}`,

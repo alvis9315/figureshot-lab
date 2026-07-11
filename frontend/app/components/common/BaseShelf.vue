@@ -19,7 +19,7 @@ import emblaCarouselVue from 'embla-carousel-vue'
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: true,
   dragFree: true,
-  align: 'start',
+  align: 'center', // 預設一張卡置中、兩側露出(擁有者 2026-07-12)
   skipSnaps: true,
 })
 
