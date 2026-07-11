@@ -34,7 +34,7 @@
           >
             <span
               class="h-3.5 w-3.5 rounded-full"
-              :style="theme === 'cinema' ? 'background:#2149c1' : 'background:#e8a33d'"
+              :style="theme === 'cinema' ? 'background:#02a8e0' : 'background:#e8a33d'"
               aria-hidden="true"
             />
           </button>

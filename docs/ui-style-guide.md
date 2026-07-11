@@ -16,7 +16,9 @@
 | 主題 | 定位 | token 值 |
 |---|---|---|
 | `cinema`(預設) | 深色電影感 | 近黑底 / 暖白字 / 暖橘 accent |
-| `bluebottle` | 白底鈷藍(比例 60% 白 / 30% 藍 / 10% 深灰;參考 Blue Bottle 只取色彩元素) | `#fbfaf6` 底 / `#2f3033` 深灰字 / `#2149c1` 鈷藍 accent |
+| `bluebottle` | 白底亮青藍(比例 60% 白 / 30% 藍 / 10% 深灰;參考 Blue Bottle 只取色彩元素) | `#fbfaf6` 底 / `#2f3033` 深灰字 / **`#02a8e0`** accent(2026-07-12 擁有者定色) |
+
+**bluebottle 主題專屬調整**(2026-07-12):①輪播關光暈(白底顯髒,CSS 對 `.hero-lighting` 隱藏);②02 轉場不用漸層——改與上方色帶**平行的斜切**,此後一路白底(GradientSection 主題分支);③02 卡片一律 `#02a8e0` 純色;④03 書架卡維持深底但光暈統一**金屬藍**(rgb 2 168 224);⑤輪盤/按鈕吃 accent token 自動變藍。
 
 機制(token 化的驗收):換膚 = `main.css` 覆寫 `[data-theme]` 五個變數,**元件零修改**;header 色票圓點切換(圓點顯示切過去的顏色)、cookie 持久化、SSR 首屏即正確主題無閃爍(`useTheme` composable + app.vue 綁 htmlAttrs)。硬編色的例外(卡片深底、名牌條、漸層帶)為刻意跨主題不變項;遮罩一律用 `color-mix(var(--fs-bg))` 調製以雙主題可讀。新增第三主題:加一段變數覆寫即可。
 

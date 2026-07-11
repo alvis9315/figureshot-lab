@@ -30,9 +30,7 @@
               :video="card.video"
               :image="card.image"
               class="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
-              :fallback="`background:
-                radial-gradient(ellipse 70% 60% at 45% 35%, hsl(${card.hue} 50% 42% / 0.40), transparent 75%),
-                linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`"
+              :fallback="cardFallback(card.hue, 0.4)"
             />
           </div>
           <p class="mt-3 max-w-lg px-1 text-sm text-fs-muted">
@@ -47,9 +45,7 @@
             <BaseMedia
               :video="card.video"
               :image="card.image"
-              :fallback="`background:
-                radial-gradient(ellipse 80% 60% at 50% 30%, hsl(${card.hue} 50% 42% / 0.45), transparent 75%),
-                linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`"
+              :fallback="cardFallback(card.hue, 0.45)"
             />
             <div class="absolute inset-x-0 bottom-0 p-4">
               <p class="font-mono text-[9px] uppercase tracking-wider text-fs-accent">{{ $t(`style.name.${card.style}`) }}</p>
@@ -92,4 +88,14 @@ const cards: ShelfCard[] = [
 
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]
+
+// 卡片底:cinema=各色相光暈;bluebottle=金屬藍光 + 同款深底(擁有者 2026-07-12)
+const { theme } = useTheme()
+
+function cardFallback(hue: number, alpha: number) {
+  const glow = theme.value === 'bluebottle' ? `rgb(2 168 224 / ${alpha + 0.05})` : `hsl(${hue} 50% 42% / ${alpha})`
+  return `background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, ${glow}, transparent 75%),
+    linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`
+}
 </script>

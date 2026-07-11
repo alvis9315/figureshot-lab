@@ -15,7 +15,7 @@
           alt=""
           class="absolute inset-0 h-full w-full object-cover"
         >
-        <div class="absolute inset-0" :style="lightingStyle" />
+        <div class="hero-lighting absolute inset-0" :style="lightingStyle" />
         <div class="absolute inset-0" :style="shadeStyle" />
       </div>
     </Transition>

@@ -48,6 +48,8 @@
 
 - **搜尋雙元件**(擁有者需求,採藍瓶版):①SearchOverlay——header 放大鏡 → 全頁覆蓋層右→左滑入(0.35s),搜尋框(自動聚焦)+ 熱門分類 chips + 推薦靈感三卡;Enter 帶 ?q= 跳 generator 預填角色池搜尋;Esc/✕ 關閉、開啟時鎖 body 捲動;②SearchPanel——Apple 式頂部下拉半屏(大搜尋框 + 快速連結 + 背景壓暗),收元件庫備用未接線。兩 layout 均接 Overlay。
 
+- **bluebottle 主題微調**(擁有者五點):accent 換 #02a8e0(輪盤/按鈕 token 自動跟)、白版輪播關光暈(CSS 一行)、02 轉場白版改平行斜切+此後全白底(GradientSection 主題分支)、02 卡片白版純 #02a8e0、03 書架卡白版金屬藍光+原深底(cardFallback 函式分支)。深色版全部不動。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

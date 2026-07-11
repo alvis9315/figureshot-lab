@@ -5,7 +5,7 @@
     <div class="group relative overflow-hidden rounded-2xl">
       <BaseMedia
         class="h-[40vh] w-full transition-transform duration-300 ease-out group-hover:scale-[1.02] md:h-[48vh]"
-        fallback="background: hsl(30 38% 16%)"
+        :fallback="isLight ? 'background:#02a8e0' : 'background: hsl(30 38% 16%)'"
       />
       <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8">
         <p class="font-mono text-[11px] uppercase tracking-[0.25em] text-fs-accent">{{ $t('landing.media.featured') }}</p>
@@ -17,7 +17,7 @@
       <div v-for="thumb in thumbs" :key="thumb.scene" class="group relative overflow-hidden rounded-xl">
         <BaseMedia
           class="aspect-video w-full transition-transform duration-300 ease-out group-hover:scale-[1.05]"
-          :fallback="`background: hsl(${thumb.hue} 42% 21%)`"
+          :fallback="isLight ? 'background:#02a8e0' : `background: hsl(${thumb.hue} 42% 21%)`"
         />
         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3">
           <p class="text-sm font-medium">{{ $t(`style.scene.${thumb.scene}`) }}</p>
@@ -29,6 +29,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
+// 白色主題:卡片一律 #02a8e0 純色(擁有者 2026-07-12)
+const { theme } = useTheme()
+const isLight = computed(() => theme.value === 'bluebottle')
+
 const thumbs = [
   { scene: 'rooftop', mood: 'deadpan', hue: 212 },
   { scene: 'store', mood: 'awkward', hue: 36 },

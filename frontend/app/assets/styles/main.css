@@ -25,7 +25,12 @@
   --fs-surface: #efeee8;
   --fs-text: #2f3033;
   --fs-text-muted: #666a6f;
-  --fs-accent: #2149c1; /* 鈷藍 */
+  --fs-accent: #02a8e0; /* 亮青藍(2026-07-12 擁有者指定色號) */
+}
+
+/* 白色主題:輪播不用光暈(白底會顯髒,擁有者 2026-07-12) */
+[data-theme='bluebottle'] .hero-lighting {
+  opacity: 0;
 }
 
 @theme {
