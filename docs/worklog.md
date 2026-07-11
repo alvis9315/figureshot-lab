@@ -50,6 +50,8 @@
 
 - **bluebottle 主題微調**(擁有者五點):accent 換 #02a8e0(輪盤/按鈕 token 自動跟)、白版輪播關光暈(CSS 一行)、02 轉場白版改平行斜切+此後全白底(GradientSection 主題分支)、02 卡片白版純 #02a8e0、03 書架卡白版金屬藍光+原深底(cardFallback 函式分支)。深色版全部不動。
 
+- **SearchOverlay v2**(擁有者兩點):①間距重排對齊藍瓶呼吸感(px-6/10、段落 mt-16、標題 text-xl、卡格 gap-6);②搜尋邏輯改**即時過濾不跳轉**——無輸入=熱門分類+熱門靈感,輸入中下方即時顯示符合卡片(標題+風格名比對)、無結果有提示,點卡片才跳詳細頁。六張示範靈感卡抽成共用常數 demoInspirations(ShelfSection/SearchOverlay 共用),新元件 InspirationCard(白版 #02a8e0)。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

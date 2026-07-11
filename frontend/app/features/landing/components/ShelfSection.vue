@@ -59,6 +59,8 @@
 </template>
 
 <script setup lang="ts">
+import { demoInspirations } from '../constants/demoInspirations'
+
 withDefaults(defineProps<{
   label: string
   title: string
@@ -68,23 +70,8 @@ withDefaults(defineProps<{
   size?: 'sm' | 'lg'
 }>(), { size: 'sm' })
 
-interface ShelfCard {
-  key: string
-  style: string
-  hue: number
-  video?: string
-  image?: string
-}
-
-// 素材進場:填 video(自帶播放鈕)或 image 即取代漸層占位
-const cards: ShelfCard[] = [
-  { key: 'c1', style: 'cinematic', hue: 352 },
-  { key: 'c2', style: 'street', hue: 212 },
-  { key: 'c3', style: 'warmDaily', hue: 36 },
-  { key: 'c4', style: 'neoTokyo', hue: 300 },
-  { key: 'c5', style: 'warmDaily', hue: 150 },
-  { key: 'c6', style: 'street', hue: 20 },
-]
+// 卡片資料與 SearchOverlay 共用(features/landing/constants/demoInspirations)
+const cards = demoInspirations
 
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]

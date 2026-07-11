@@ -177,7 +177,9 @@
     "placeholder": "想找什麼靈感?",
     "topCategories": "熱門分類",
     "popular": "熱門靈感",
-    "quickLinks": "快速連結"
+    "quickLinks": "快速連結",
+    "results": "搜尋結果",
+    "noResults": "找不到相關靈感,換個關鍵字試試。"
   },
   "footer": {
     "product": "產品",

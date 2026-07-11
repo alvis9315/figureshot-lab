@@ -66,7 +66,8 @@
 | BaseMedia | Base | 圖/影媒體格:video 附圓形播放/暫停鈕,無素材吃 fallback 漸層 | 櫥窗卡,未來收藏照/大圖 |
 | PinnedStorySection | Feature(landing) | 定格滾動敘事(sticky pin + 滾動進度驅動文字穿越;reduced-motion 靜態) | / 宣言段 |
 | TheFooter | Layout | 正式 footer:品牌 + 產品/帳號/社群欄 + 版權細字(Apple 式) | 兩個 layout |
-| SearchOverlay | Feature(search) | 藍瓶式全頁搜尋:右→左滑入覆蓋、搜尋框+熱門分類+推薦靈感、Esc 關閉、q 帶入 generator | 兩個 layout(採用中) |
+| SearchOverlay | Feature(search) | 藍瓶式全頁搜尋 v2:右→左滑入、無輸入=分類+熱門靈感、輸入=**即時過濾不跳轉**、點卡片進詳細頁 | 兩個 layout(採用中) |
+| InspirationCard | Feature(search) | 靈感卡(BaseMedia + 標題/風格標;白版 #02a8e0、深版色相深底) | SearchOverlay 熱門/結果 |
 | SearchPanel | Feature(search) | Apple 式搜尋:頂部下拉半屏、大搜尋框+快速連結、背景壓暗 | 備用(未接線) |
 | FeatureStorySection | Feature(landing) | 單段功能敘事(scroll reveal,可翻轉) | / ×3 |
 | QuickSpinSection | Feature(landing) | 輪盤快抽入口(擁有者決策:輪盤意象放首頁) | / |
