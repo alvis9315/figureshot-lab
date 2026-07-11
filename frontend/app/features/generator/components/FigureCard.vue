@@ -1,14 +1,16 @@
 <template>
   <button
     type="button"
-    class="fs-skew-card group relative p-[2px] text-left transition duration-150 ease-out hover:-translate-y-1"
+    class="fs-skew-card group relative flex h-full p-[2px] text-left transition duration-150 ease-out hover:-translate-y-1"
     :class="selected ? 'bg-fs-accent' : 'bg-fs-muted/15 hover:bg-fs-muted/40'"
     @click="$emit('select', figure)"
   >
-    <span class="fs-skew-card flex w-full flex-col overflow-hidden bg-fs-surface">
-      <!-- 立繪占位:正式版換收藏照片(hero-team-select-modern 的角色帶語彙) -->
+    <span class="fs-skew-card flex h-full w-full flex-col overflow-hidden bg-fs-surface">
+      <!-- 立繪占位:正式版換收藏照片(hero-team-select-modern 的角色帶語彙);
+           桌機池與 Slot 等高時改由列高決定卡高(aspect 只留手機) -->
       <span
-        class="relative flex aspect-[3/4] w-full items-end justify-center"
+        class="relative flex w-full items-end justify-center"
+        :class="stretch ? 'aspect-[3/4] flex-1 lg:aspect-auto' : 'aspect-[3/4]'"
         :style="`background: linear-gradient(180deg, hsl(${figure.hue} 42% 30%) 0%, hsl(${figure.hue} 45% 12%) 100%)`"
         aria-hidden="true"
       >
@@ -38,6 +40,6 @@
 <script setup lang="ts">
 import type { DemoFigure } from '../constants/demoFigures'
 
-defineProps<{ figure: DemoFigure; selected?: boolean }>()
+defineProps<{ figure: DemoFigure; selected?: boolean; stretch?: boolean }>()
 defineEmits<{ select: [DemoFigure]; detail: [DemoFigure] }>()
 </script>

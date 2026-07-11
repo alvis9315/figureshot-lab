@@ -8,7 +8,7 @@
     </header>
 
     <!-- Squad:三格橫列在池上方;Pair/Crossover:左右對峙(桌機),手機 A vs B 置頂 -->
-    <div :class="mode === 'squad' ? 'flex flex-col gap-6' : 'grid gap-6 lg:grid-cols-[1fr_2fr_1fr] lg:items-start'">
+    <div :class="mode === 'squad' ? 'flex flex-col gap-6' : 'grid gap-6 lg:grid-cols-[1fr_2fr_1fr] lg:items-stretch'">
       <div :class="mode === 'squad' ? 'grid grid-cols-3 gap-3 md:mx-auto md:w-2/3' : 'grid grid-cols-[1fr_auto_1fr] items-center gap-2 lg:grid-cols-1'">
         <SlotCard
           :figure="slots[0] ?? null"
@@ -45,13 +45,18 @@
         />
       </div>
 
-      <div class="flex flex-col gap-4">
-        <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-4 xl:grid-cols-6" :class="{ 'pool-flash': flashing }">
+      <div class="flex flex-col gap-4" :class="mode !== 'squad' ? 'lg:h-full' : ''">
+        <!-- 桌機與 Slot 等高:auto-rows-fr 均分列高,卡片填滿(擁有者回饋 2026-07-12) -->
+        <div
+          class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-4 xl:grid-cols-6"
+          :class="[{ 'pool-flash': flashing }, mode !== 'squad' ? 'lg:min-h-0 lg:flex-1 lg:auto-rows-fr' : '']"
+        >
           <FigureCard
             v-for="f in visibleFigures"
             :key="f.id"
             :figure="f"
             :selected="isSelected(f)"
+            :stretch="mode !== 'squad'"
             @select="pick"
             @detail="detailFigure = $event"
           />
