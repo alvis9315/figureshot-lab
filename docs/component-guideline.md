@@ -58,7 +58,8 @@
 | HeroCarousel | Feature(landing) | 滿版破題輪播(3 張、自動播放 5s、hover 暫停、圓點/箭頭、reduced-motion 不自動播);取代原 HeroSection | / |
 | RevealSection | Base | 滾動漸入標準容器(包住任何區塊即得 reveal;動畫模組化入口) | / 各區段 |
 | AngledSection | Feature(landing) | 斜切亮暗色帶 + 超大章節標題(轉場區塊;slant/tone 交替) | / ×3 |
-| FullBleedBlock | Feature(landing) | 滿版視覺 + 浮動資訊卡 + CTA(章節開場區塊;支援 image) | / 社群預告 |
+| FullBleedBlock | Feature(landing) | 直角滿版視覺 + 版心對齊資訊卡 + CTA(支援 image;光在卡片側) | / 03 段 |
+| GradientSection | Feature(landing) | 漸層轉場區塊(與上一區塊色調相接)+ 大章節標題 | / 02 段 |
 | FeatureStorySection | Feature(landing) | 單段功能敘事(scroll reveal,可翻轉) | / ×3 |
 | QuickSpinSection | Feature(landing) | 輪盤快抽入口(擁有者決策:輪盤意象放首頁) | / |
 | ModeSwitch | Feature(generator) | Pair / Squad / Crossover 切換 | /generator |

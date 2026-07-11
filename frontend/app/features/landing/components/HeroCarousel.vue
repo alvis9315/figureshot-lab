@@ -1,6 +1,7 @@
 <template>
+  <!-- min-h-screen:第一屏不露出下方斜切區塊,往下滑才有驚喜(擁有者要求) -->
   <section
-    class="relative min-h-[92vh] overflow-hidden"
+    class="relative min-h-screen overflow-hidden"
     aria-roledescription="carousel"
     @mouseenter="pause"
     @mouseleave="resume"
@@ -20,7 +21,7 @@
     </Transition>
 
     <!-- 內容:每張各自的對齊(左/右/中)與獨立 CTA -->
-    <div class="relative mx-auto flex min-h-[92vh] w-full max-w-6xl items-center px-6 md:px-20">
+    <div class="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 md:px-20">
       <Transition name="hero-fade" mode="out-in">
         <div :key="current" class="flex w-full flex-col gap-5" :class="alignClasses">
           <p class="font-mono text-xs uppercase tracking-[0.35em] text-fs-accent">{{ $t(slide.kicker) }}</p>
@@ -73,7 +74,9 @@ const localePath = useLocalePath()
 type SlideAlign = 'left' | 'right' | 'center'
 
 interface Slide {
-  hue: number
+  h: number
+  s: number
+  l: number
   align: SlideAlign
   kicker: string
   title: string
@@ -83,11 +86,12 @@ interface Slide {
   image?: string
 }
 
-// 順序:藍光第一(擁有者指定);對齊 左→右→中;image 待攝影作品/設計圖(PRE-004/005 素材)
+// 順序:藍光第一(擁有者指定);色彩=超級英雄紅藍黃(灰藍提亮 / 暖黃 / 英雄酒紅,2026-07-12 校色)
+// 對齊 左→右→中;image 待攝影作品/設計圖(PRE-004/005 素材)
 const slides: Slide[] = [
-  { hue: 210, align: 'left', kicker: 'app.tagline', title: 'landing.hero.title', sub: 'landing.question', cta: 'landing.cta.start', to: '/generator' },
-  { hue: 36, align: 'right', kicker: 'landing.slides.s2.kicker', title: 'landing.slides.s2.title', sub: 'landing.slides.s2.sub', cta: 'landing.slides.s2.cta', to: '/collection' },
-  { hue: 320, align: 'center', kicker: 'landing.slides.s3.kicker', title: 'landing.slides.s3.title', sub: 'landing.slides.s3.sub', cta: 'landing.slides.s3.cta', to: '/share/demo' },
+  { h: 212, s: 38, l: 56, align: 'left', kicker: 'app.tagline', title: 'landing.hero.title', sub: 'landing.question', cta: 'landing.cta.start', to: '/generator' },
+  { h: 36, s: 60, l: 45, align: 'right', kicker: 'landing.slides.s2.kicker', title: 'landing.slides.s2.title', sub: 'landing.slides.s2.sub', cta: 'landing.slides.s2.cta', to: '/collection' },
+  { h: 352, s: 58, l: 42, align: 'center', kicker: 'landing.slides.s3.kicker', title: 'landing.slides.s3.title', sub: 'landing.slides.s3.sub', cta: 'landing.slides.s3.cta', to: '/share/demo' },
 ]
 
 const AUTOPLAY_MS = 5000
@@ -100,13 +104,13 @@ const alignClasses = computed(() => ({
   center: 'items-center text-center',
 }[slide.value.align]))
 
-// 打光層:光源偏向文字對側(左字→光在右,右字→光在左,置中→正中)
+// 打光層:光源與文字**同側**——光抓住焦點,焦點就是文字(擁有者校正 2026-07-12)
 const lightingStyle = computed(() => {
-  const x = { left: 68, right: 32, center: 50 }[slide.value.align]
-  const h = slide.value.hue
+  const x = { left: 32, right: 68, center: 50 }[slide.value.align]
+  const { h, s, l } = slide.value
   return `background:
-    radial-gradient(ellipse 70% 55% at ${x}% 38%, hsl(${h} 60% 45% / 0.24), transparent 70%),
-    radial-gradient(ellipse 45% 35% at ${x}% 42%, hsl(${h} 65% 55% / 0.15), transparent 65%)`
+    radial-gradient(ellipse 70% 55% at ${x}% 40%, hsl(${h} ${s}% ${l}% / 0.26), transparent 70%),
+    radial-gradient(ellipse 45% 35% at ${x}% 44%, hsl(${h} ${s}% ${Math.min(l + 12, 70)}% / 0.16), transparent 65%)`
 })
 
 // 漸暗層:壓在文字側,照片進來後仍保可讀性

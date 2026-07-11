@@ -25,6 +25,16 @@ Mobile-first;breakpoint 只用 Tailwind 預設(sm 640 / md 768 / lg 1024 / xl 12
 
 rem 基準;標題 clamp();不用純 vw 當內文字級;不擋使用者縮放(viewport meta 不加 user-scalable=no)。
 
+## Landing 區塊 RWD 行為(2026-07-12 補)
+
+| 區塊 | 手機 | 桌機 |
+|---|---|---|
+| HeroCarousel | 滿版直式;箭頭縮至邊緣 44px;文字左/右對齊維持但寬度收斂 | 滿版;側邊箭頭 |
+| AngledSection / GradientSection | 大標題縮級(text-4xl);斜切角固定 3rem 不縮 | text-6xl |
+| FeatureStorySection | 單欄直式堆疊(視覺在上文字在下) | 雙欄,flip 交替 |
+| FullBleedBlock | 卡片貼版心滿寬(max-w-sm 內縮) | 卡片靠版心左緣 |
+| Generator 選角 | Slot A VS B 置頂橫列、池 3 欄、詳情 bottom sheet、控制列直式 | 左右對峙、池 4~6 欄 |
+
 ## 測試清單(完成畫面前必檢)
 
 375 / 390 / 768 / 1024 / 1280px;無整頁橫向捲軸;按鈕可點面積足夠;zoom 200% 可操作。
