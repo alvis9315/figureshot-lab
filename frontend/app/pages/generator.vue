@@ -141,7 +141,12 @@ function isSelected(f: DemoFigure) {
 }
 
 function pick(f: DemoFigure) {
-  if (isSelected(f)) return
+  // 再次點選已選角色 = 取消選取(鎖定欄位受保護,2026-07-12);空欄位優先補位
+  const existing = slots.value.findIndex((s) => s?.id === f.id)
+  if (existing !== -1) {
+    if (!locks.value[existing]) slots.value[existing] = null
+    return
+  }
   const empty = slots.value.findIndex((s, i) => s === null && !locks.value[i])
   const target = empty !== -1 ? empty : locks.value.findIndex((l) => !l)
   if (target === -1) return

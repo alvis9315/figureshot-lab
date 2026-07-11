@@ -11,9 +11,10 @@
         <!-- key 觸發 crossfade + scale-in(motion spec 3.3/3.4) -->
         <Transition name="slot-swap" mode="out-in">
           <div :key="figure.id" class="flex w-full flex-col items-center gap-3">
+            <!-- 淺色版圓圈底改藍(擁有者 2026-07-12);深色版維持色相球 -->
             <div
               class="flex h-24 w-24 items-center justify-center rounded-full text-4xl md:h-32 md:w-32"
-              :style="`background: radial-gradient(circle at 35% 30%, hsl(${figure.hue} 50% 42%), hsl(${figure.hue} 40% 14%))`"
+              :style="isLight ? 'background:#02a8e0' : `background: radial-gradient(circle at 35% 30%, hsl(${figure.hue} 50% 42%), hsl(${figure.hue} 40% 14%))`"
               aria-hidden="true"
             >
               <span class="opacity-75">🤖</span>
@@ -43,11 +44,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { DemoFigure } from '../constants/demoFigures'
 
 defineProps<{ figure: DemoFigure | null; locked: boolean; label: string }>()
 const emit = defineEmits<{ toggleLock: [] }>()
+
+const { theme } = useTheme()
+const isLight = computed(() => theme.value === 'bluebottle')
 
 const pulsing = ref(false)
 
