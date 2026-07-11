@@ -21,7 +21,8 @@ const isLight = computed(() => theme.value === 'bluebottle')
 
 const bgStyle = computed(() =>
   isLight.value
-    ? 'clip-path: polygon(0 0, 100% 3rem, 100% 100%, 0 100%); background: var(--fs-bg)'
+    // 白版斜切:右高左低(擁有者 2026-07-12 調向)
+    ? 'clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%); background: var(--fs-bg)'
     : `background: linear-gradient(180deg,
         var(--fs-text) 0%,
         #e6e9ec 10%,

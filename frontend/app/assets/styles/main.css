@@ -33,6 +33,12 @@
   opacity: 0;
 }
 
+/* 白色主題:圖文區視覺占位改 #02a8e0 純色(擁有者 2026-07-12) */
+[data-theme='bluebottle'] .story-visual {
+  background-image: none !important;
+  background-color: #02a8e0 !important;
+}
+
 @theme {
   --color-fs-bg: var(--fs-bg);
   --color-fs-surface: var(--fs-surface);

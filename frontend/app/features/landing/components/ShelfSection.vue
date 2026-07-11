@@ -76,13 +76,13 @@ const cards = demoInspirations
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]
 
-// 卡片底:cinema=各色相光暈;bluebottle=金屬藍光 + 同款深底(擁有者 2026-07-12)
+// 卡片底:cinema=各色相光暈深底;bluebottle=深灰純色(金屬藍光經實測顯濁,棄用 2026-07-12)
 const { theme } = useTheme()
 
 function cardFallback(hue: number, alpha: number) {
-  const glow = theme.value === 'bluebottle' ? `rgb(2 168 224 / ${alpha + 0.05})` : `hsl(${hue} 50% 42% / ${alpha})`
+  if (theme.value === 'bluebottle') return 'background:#2f3033'
   return `background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, ${glow}, transparent 75%),
+    radial-gradient(ellipse 80% 60% at 50% 30%, hsl(${hue} 50% 42% / ${alpha}), transparent 75%),
     linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`
 }
 </script>
