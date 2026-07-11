@@ -20,6 +20,7 @@ i18n/locales/                en.json(預設)、zh-TW.json
 
 ## 規則
 
+- 元件的判定、分級(Base/Feature/Layout)、命名、新增流程與登記:見 component-guideline.md(唯一裁判)。
 - API 呼叫只出現在 services/ 與 features/*/api/;page 與元件不直接 fetch。
 - 文案一律 `$t()`,新增字串同時補 en 與 zh-TW。
 - SSR:分享頁與 Landing 需 OG meta(useSeoMeta);純互動頁(輪盤)可 CSR。

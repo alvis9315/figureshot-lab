@@ -19,7 +19,7 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | PRE-001 | 專案總綱文件 | spec md 為單一事實來源、版本紀錄 | **已完成** | 已收入 `docs/product-spec.md`(v0.2)+ 本狀態板 |
 | PRE-002 | 目標玩家訪談 | 訪談 8~12 位不同類型玩家 | 未開始 | 只有擁有者能做;訪談大綱可請 AI 代擬 |
 | PRE-003 | 競品與替代方案分析 | 比較收藏管理、輪盤、AI 文案、攝影社群等競品 | 未開始 | 可請 AI 代工初稿 |
-| PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | 未開始 | |
+| PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | 未開始 | 執行機制:ui-style-guide.md「風格定案三關」;正式切版須待本項 + PRE-008 定稿 |
 | PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 未開始 | 資料模板可先出 |
 | PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 未開始 | 降低對 AI 的完全依賴 |
 | PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 未開始 | 定稿後轉 Mermaid 入 architecture.md |

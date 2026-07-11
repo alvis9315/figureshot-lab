@@ -47,6 +47,8 @@ docker compose up -d                  # 本機 PostgreSQL
 1. 只用 Tailwind CSS,不引入其他 UI library(Element Plus、Naive UI 等一律禁止)。
 2. design token(色彩、字階、間距)集中在 Tailwind theme + `assets/styles/` 的 CSS variables,不可散落覆寫。
 3. 樣式不可全塞單一 css 檔;重複 pattern 抽成 component。
+4. 新增元件必須走 `docs/component-guideline.md`:判定該不該抽、放哪層(Base/Feature/Layout)、跑 checklist、在登記表登記;元件內禁止 magic number,樣式只走 token。
+5. 視覺風格未定案(PRE-004)前不得開刻正式版面;風格需求不明確時走 `docs/ui-style-guide.md` 的「風格定案三關」向擁有者提問,不得憑感覺自行決定。
 
 ## RWD 防呆
 
