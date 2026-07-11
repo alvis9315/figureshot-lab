@@ -23,12 +23,14 @@
       "s2": {
         "kicker": "Build your team",
         "title": "Pick figures like choosing your heroes.",
-        "sub": "Pair rivals, form squads, or cross universes."
+        "sub": "Pair rivals, form squads, or cross universes.",
+        "cta": "Learn more"
       },
       "s3": {
         "kicker": "Turn figures into stories",
         "title": "Scene, mood, caption — ready to post.",
-        "sub": "Your photo plan and your post, generated together."
+        "sub": "Your photo plan and your post, generated together.",
+        "cta": "See a sample"
       }
     },
     "carousel": {
