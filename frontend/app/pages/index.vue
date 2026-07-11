@@ -1,28 +1,41 @@
 <template>
-  <section class="flex flex-col items-center gap-6 py-16 text-center md:py-28">
-    <p class="text-sm uppercase tracking-[0.3em] text-fs-muted">{{ $t('app.tagline') }}</p>
-    <h1 class="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-      {{ $t('landing.question') }}
-    </h1>
-    <p class="max-w-xl text-fs-muted">{{ $t('landing.subtitle') }}</p>
-    <NuxtLink
-      :to="localePath('/wheel')"
-      class="rounded-full bg-fs-accent px-8 py-3 font-medium text-fs-bg transition hover:opacity-90"
-    >
-      {{ $t('landing.cta') }}
-    </NuxtLink>
-    <!-- TODO(功能期): Showcase 大圖輪播,素材待 PRE-004 Moodboard 定稿 -->
-  </section>
+  <div>
+    <HeroSection />
+    <FeatureStorySection
+      :kicker="$t('landing.story1.kicker')"
+      :title="$t('landing.story1.title')"
+      :description="$t('landing.story1.desc')"
+      :accent-strength="14"
+    />
+    <FeatureStorySection
+      :kicker="$t('landing.story2.kicker')"
+      :title="$t('landing.story2.title')"
+      :description="$t('landing.story2.desc')"
+      flip
+      :accent-strength="8"
+    />
+    <FeatureStorySection
+      :kicker="$t('landing.story3.kicker')"
+      :title="$t('landing.story3.title')"
+      :description="$t('landing.story3.desc')"
+      :accent-strength="11"
+    />
+    <QuickSpinSection />
+  </div>
 </template>
 
 <script setup lang="ts">
-const localePath = useLocalePath()
-const { t } = useI18n()
+import HeroSection from '~/features/landing/components/HeroSection.vue'
+import FeatureStorySection from '~/features/landing/components/FeatureStorySection.vue'
+import QuickSpinSection from '~/features/landing/components/QuickSpinSection.vue'
 
+definePageMeta({ layout: 'landing' })
+
+const { t } = useI18n()
 useSeoMeta({
   title: () => t('app.name'),
-  description: () => t('landing.subtitle'),
+  description: () => t('landing.hero.title'),
   ogTitle: () => t('app.name'),
-  ogDescription: () => t('landing.subtitle'),
+  ogDescription: () => t('landing.hero.title'),
 })
 </script>

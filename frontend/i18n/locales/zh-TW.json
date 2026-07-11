@@ -6,14 +6,77 @@
   },
   "nav": {
     "collection": "收藏庫",
-    "wheel": "靈感輪盤",
+    "generator": "靈感產生器",
     "history": "靈感紀錄",
     "login": "登入"
   },
   "landing": {
     "question": "今天想拍哪一隻?",
-    "subtitle": "把你的模型收藏變成攝影主題、角色搭配、擺拍建議與社群文案。",
-    "cta": "轉動輪盤"
+    "hero": {
+      "title": "把你的模型收藏,變成電影感的攝影靈感。"
+    },
+    "cta": {
+      "start": "開始創作",
+      "explore": "探索靈感"
+    },
+    "story1": {
+      "kicker": "Build your team",
+      "title": "像選英雄一樣,挑出今天的主角。",
+      "desc": "把收藏當成你的角色名冊:配對宿敵、組成小隊、跨作品亂入——快門還沒按,張力就已經開始。"
+    },
+    "story2": {
+      "kicker": "Generate a scene",
+      "title": "抽出場景、情緒與任務。",
+      "desc": "鎖定主角,其餘交給隨機。一個場景、一種情緒、一個任務,讓櫃子上的模型變成等著被拍的故事。"
+    },
+    "story3": {
+      "kicker": "Turn figures into stories",
+      "title": "從擺拍建議到文案,一次到位。",
+      "desc": "構圖、光線、擺姿建議,加上可直接發文的文案與 hashtag——攝影企劃和貼文一起生成。"
+    },
+    "spin": {
+      "title": "手氣如何?",
+      "subtitle": "轉一下輪盤,讓你的收藏給你今天的驚喜組合。",
+      "cta": "轉動輪盤開始創作"
+    }
+  },
+  "generator": {
+    "mode": {
+      "pair": "配對",
+      "squad": "小隊",
+      "crossover": "跨作品"
+    },
+    "crossoverHint": "跨作品模式會從不同系列中挑選,製造意想不到的組合。",
+    "slotLabel": "欄位 {n}——點下方角色放入",
+    "lock": "鎖定",
+    "searchPlaceholder": "搜尋你的模型…",
+    "filter": {
+      "hero": "英雄",
+      "mecha": "機甲",
+      "cute": "可愛",
+      "daily": "日常"
+    },
+    "randomize": "隨機抽選",
+    "generate": "生成靈感",
+    "emptyPool": "沒有符合搜尋的模型。",
+    "demoNote": "預覽版:占位角色與靜態結果;真實收藏與 AI 生成待 PRE 閘門完成後接線。",
+    "result": {
+      "kicker": "靈感",
+      "demoTitle": "世界末日也要加班",
+      "demoScene": "黃昏頂樓",
+      "demoMood": "冷面幽默",
+      "demoTask": "等外送",
+      "tips": "拍攝建議",
+      "tip1": "桌面高度的低角度仰拍,讓天際線漸層填滿背景。",
+      "tip2": "左側 45° 主光、暖色調;手機手電筒就夠用。",
+      "tip3": "較高的模型略靠後製造景深,對焦在前排臉部。",
+      "caption": "文案",
+      "demoCaption": "「英雄也得等外送。」#模型攝影 #玩具攝影 #figureshotlab",
+      "save": "儲存",
+      "reroll": "重新抽選",
+      "share": "分享",
+      "demoNote": "儲存與分享將在帳號與收藏 API 接線後啟用。"
+    }
   },
   "common": {
     "placeholder": "即將推出——此頁為專案初始化的佔位頁。"

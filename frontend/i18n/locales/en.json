@@ -6,14 +6,77 @@
   },
   "nav": {
     "collection": "Collection",
-    "wheel": "Inspiration Wheel",
+    "generator": "Generator",
     "history": "History",
     "login": "Log in"
   },
   "landing": {
     "question": "What do you want to shoot today?",
-    "subtitle": "Turn your figure collection into photo ideas, pairings, posing tips, and social-ready captions.",
-    "cta": "Spin the wheel"
+    "hero": {
+      "title": "Turn your figure collection into cinematic photo ideas."
+    },
+    "cta": {
+      "start": "Start Creating",
+      "explore": "Explore Inspirations"
+    },
+    "story1": {
+      "kicker": "Build your team",
+      "title": "Pick figures like choosing your heroes.",
+      "desc": "Browse your own collection as a character roster. Pair rivals, form squads, or cross universes — the tension starts before the shutter."
+    },
+    "story2": {
+      "kicker": "Generate a scene",
+      "title": "Spin up scenes, moods, and missions.",
+      "desc": "Lock your leads, randomize the rest. Get a scene, an emotion, and a task that turn shelf figures into a story waiting to be shot."
+    },
+    "story3": {
+      "kicker": "Turn figures into stories",
+      "title": "From setup to caption, ready to post.",
+      "desc": "Posing tips, lighting hints, and social-ready captions with hashtags — your photo plan and your post, generated together."
+    },
+    "spin": {
+      "title": "Feeling lucky?",
+      "subtitle": "Spin the wheel and let your collection surprise you with today's pairing.",
+      "cta": "Spin & Create"
+    }
+  },
+  "generator": {
+    "mode": {
+      "pair": "Pair",
+      "squad": "Squad",
+      "crossover": "Crossover"
+    },
+    "crossoverHint": "Crossover picks figures from different series for unexpected pairings.",
+    "slotLabel": "Slot {n} — tap a figure below",
+    "lock": "Lock",
+    "searchPlaceholder": "Search your figures…",
+    "filter": {
+      "hero": "Hero",
+      "mecha": "Mecha",
+      "cute": "Cute",
+      "daily": "Daily"
+    },
+    "randomize": "Randomize",
+    "generate": "Generate",
+    "emptyPool": "No figures match your search.",
+    "demoNote": "Preview build: placeholder figures and static results. Real collection & AI generation land after the PRE gates.",
+    "result": {
+      "kicker": "Inspiration",
+      "demoTitle": "Overtime at the End of the World",
+      "demoScene": "Rooftop at dusk",
+      "demoMood": "Deadpan comedy",
+      "demoTask": "Waiting for takeout",
+      "tips": "Shooting tips",
+      "tip1": "Low angle from tabletop level; let the skyline gradient fill the background.",
+      "tip2": "Key light from the left at 45°, warm tone; a phone flashlight works.",
+      "tip3": "Put the taller figure slightly behind for depth; focus on the front face.",
+      "caption": "Caption",
+      "demoCaption": "\"Even heroes wait for delivery.\" #figurephotography #toyphotography #figureshotlab",
+      "save": "Save",
+      "reroll": "Re-roll",
+      "share": "Share",
+      "demoNote": "Save & share activate once accounts and the collection API are wired up."
+    }
   },
   "common": {
     "placeholder": "Coming soon — this page is a placeholder from project initialization."

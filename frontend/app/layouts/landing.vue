@@ -1,7 +1,8 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <header class="border-b border-fs-surface">
-      <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-3">
+    <!-- 透明 header 疊在滿版 Hero 上 -->
+    <header class="absolute inset-x-0 top-0 z-10">
+      <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-4">
         <NuxtLink :to="localePath('/')" class="font-semibold tracking-wide text-fs-accent">
           {{ $t('app.name') }}
         </NuxtLink>
@@ -20,7 +21,7 @@
         </div>
       </nav>
     </header>
-    <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+    <main class="flex-1">
       <slot />
     </main>
     <footer class="border-t border-fs-surface px-4 py-4 text-center text-xs text-fs-muted">

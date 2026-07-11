@@ -1,5 +1,26 @@
 # Worklog
 
+## 2026-07-12
+
+### Done
+
+- 依擁有者 UX 參考包(GPT 產出的總指令 + 規格四件套)執行:六份 md 讀畢 → 22 張原始圖尋獲(~/figreShotLab參考資料)→ 歸檔 docs/ux/references/(14 張主圖壓 1600px JPEG 入 git,archive 全量本機保存並 gitignore)→ Visual Reference Gate → Implementation Readiness Review(docs/ux/)。
+- 擁有者四項決策:①主圖壓縮 commit;②核心頁路由 /generator,**輪盤意象放首頁**當快抽入口;③Result 為 Generator 同頁滑入面板;④本波=靜態 UI+動畫、不接 API(定位 PRE-004+PRE-008 高保真落地)。
+- Wave 1 實作完成並通過 build + SSR smoke test(/、/generator、/zh-TW):Landing(滿版 Hero 進場+stagger、三段敘事 scroll reveal、QuickSpin 輪盤區、scroll hint)、Generator(角色池、Pair/Squad/Crossover、Slot crossfade、Lock 脈衝、Randomize 閃切、Result 滑入、搜尋 Empty 態、Generate disabled 態)。動畫全依 motion-interaction-spec,支援 prefers-reduced-motion。
+- 元件登記表首批 11 筆;roadmap:PRE-004 已完成、PRE-008 開發中。
+
+### Decisions
+
+- 見上四項;風格三關第 1、3 關完成,第 2 關餘字體未定(暫用系統字,定案只改 token)。
+
+### Issues
+
+- Style/Scene 圖片導向選擇與分享獨立頁屬 Wave 2;Loading/Error 態待接 API 時實作;風格卡與角色池需 PRE-005/006 種子素材替換占位。
+
+### Next
+
+- Wave 2:Style/Scene 選擇區 + CharacterDetailPanel + 分享頁;字體定案;PRE-002/003/005/006/007/010。
+
 ## 2026-07-11
 
 ### Done

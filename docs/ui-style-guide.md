@@ -30,7 +30,10 @@
 - 深色 / 淺色 / 雙主題
 - 電影感濃度:滿版沉浸 ↔ 乾淨工具感,落在哪
 
-> 第 1 關進度(2026-07-11):**深色為主、平衡型**(首頁滿版 Showcase 做氛圍、工作區乾淨工具感)已定案;參考網站待擁有者提供 md 檔與參考資料後續跑,**在那之前不開刻正式視覺**。
+> 三關進度(2026-07-12 更新):
+> - **第 1 關:已完成**——深色為主、平衡型;參考已由 UX 參考包定案(核心:Apple Vision Pro=資訊層級、Gentle Monster=電影感、Hero Team Character Select=配對感、Teenage Engineering=控制台感;輔助:Nothing、Leica Looks、Interface In Game)。逐張規格見 docs/ux/visual-reference-guide.md。
+> - **第 2 關:部分完成**——深色 + 電影感 + 訊號色點綴(暫維持暖橘 accent);**字體性格未定**(標題襯線/幾何無襯線),暫用系統字,定案後只改 token。
+> - **第 3 關:已完成**——首頁滿版 Hero + 輪盤快抽意象、Generator 角色池+Slot、風格卡圖片導向、Result 同頁滑入面板(2026-07-12 擁有者確認)。
 
 **第 2 關:視覺語言**
 - 強調色方向(現行暫定:攝影棚燈暖橘)

@@ -52,4 +52,16 @@
 
 | 元件 | 層級 | 用途 | 使用處 |
 |---|---|---|---|
-| (尚無——正式切版於 PRE-004/PRE-008 定稿後開始) | | | |
+| BaseButton | Base | 按鈕(primary/ghost/outline × md/lg,可作連結) | 全站 |
+| BaseTag | Base | 標籤 / 篩選 chip(active 態) | generator 篩選、結果標籤 |
+| layouts/landing | Layout | 透明 header 疊滿版 Hero 的首頁殼 | / |
+| HeroSection | Feature(landing) | 滿版 Hero:進場動畫 + 破題 + 雙 CTA | / |
+| FeatureStorySection | Feature(landing) | 單段功能敘事(scroll reveal,可翻轉) | / ×3 |
+| QuickSpinSection | Feature(landing) | 輪盤快抽入口(擁有者決策:輪盤意象放首頁) | / |
+| ModeSwitch | Feature(generator) | Pair / Squad / Crossover 切換 | /generator |
+| FigureCard | Feature(generator) | 角色池占位卡(hover / 選中態) | /generator |
+| SlotCard | Feature(generator) | Slot(空/滿態、crossfade、Lock 脈衝) | /generator |
+| GeneratorControls | Feature(generator) | 搜尋 + 篩選 + Randomize + Generate 控制列 | /generator |
+| ResultPanel | Feature(generator) | 結果滑入面板(編輯感版面) | /generator |
+
+共用 composable:`useReveal`(IntersectionObserver 滾動進場,搭 .reveal/.reveal-in;reduced-motion 安全)。

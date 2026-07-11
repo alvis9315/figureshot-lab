@@ -19,11 +19,11 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | PRE-001 | 專案總綱文件 | spec md 為單一事實來源、版本紀錄 | **已完成** | 已收入 `docs/product-spec.md`(v0.2)+ 本狀態板 |
 | PRE-002 | 目標玩家訪談 | 訪談 8~12 位不同類型玩家 | 未開始 | 只有擁有者能做;訪談大綱可請 AI 代擬 |
 | PRE-003 | 競品與替代方案分析 | 比較收藏管理、輪盤、AI 文案、攝影社群等競品 | 未開始 | 可請 AI 代工初稿 |
-| PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | 未開始 | 執行機制:ui-style-guide.md「風格定案三關」;正式切版須待本項 + PRE-008 定稿 |
+| PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | **已完成** | 2026-07-12 擁有者提供 UX 參考包(7 來源 22 張圖 + visual-reference-guide 逐張規格),歸檔於 docs/ux/references/ |
 | PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 未開始 | 資料模板可先出 |
 | PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 未開始 | 降低對 AI 的完全依賴 |
 | PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 未開始 | 定稿後轉 Mermaid 入 architecture.md |
-| PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | 未開始 | 驗證首頁 Showcase 是否干擾核心 CTA |
+| PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | 開發中 | 升級為高保真落地(靜態 UI + 動畫、不接 API,2026-07-12 擁有者核准);第一波 Landing + Generator。決策:核心頁路由 /generator、輪盤意象放首頁、Result 為 Generator 同頁面板 |
 | PRE-009 | 技術 ADR | 前端、後端、DB、Auth、Storage、AI Provider 均有決策紀錄 | **已完成** | `docs/adr/0001~0004`(2026-07-11 定案) |
 | PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 未開始 | KPI 清單已在 spec 20F,待定門檻值 |
 

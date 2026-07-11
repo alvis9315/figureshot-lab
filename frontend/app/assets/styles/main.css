@@ -22,3 +22,66 @@ body {
   background-color: var(--fs-bg);
   color: var(--fs-text);
 }
+
+/* ===== Motion(docs/ux/motion/motion-interaction-spec.md)===== */
+
+/* 滾動 Reveal:配 useReveal composable */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero 進場(2.1) */
+@keyframes hero-bg-in {
+  from { transform: scale(1.04); opacity: 0.92; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes rise-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.hero-bg-in { animation: hero-bg-in 1.1s ease-out both; }
+.rise-in { animation: rise-in 0.6s ease-out both; }
+
+/* Hero scroll hint(2.4) */
+@keyframes hint-bob {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+.scroll-hint { animation: hint-bob 1.6s ease-in-out infinite; }
+
+/* Lock 脈衝(3.5) */
+@keyframes lock-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.lock-pulse { animation: lock-pulse 0.16s ease-out; }
+
+/* Randomize 閃切 shimmer(3.6) */
+@keyframes pool-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pool-flash { animation: pool-flash 0.15s ease-in-out 2; }
+
+/* Result 面板滑入(3.7) */
+@keyframes panel-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.panel-up { animation: panel-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* 無障礙:reduced motion 時停位移、保留 opacity(spec 第 8 節) */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transform: none; transition: opacity 0.3s ease-out; }
+  .hero-bg-in, .rise-in, .scroll-hint, .lock-pulse, .pool-flash, .panel-up {
+    animation: none;
+  }
+  * { transition-duration: 0.01ms !important; }
+}
