@@ -27,6 +27,9 @@
 - **HeroCarousel + 動畫模組化**(擁有者需求):首頁 Hero 改滿版自動輪播 3 張破題(5s、crossfade、hover 暫停、圓點/箭頭、reduced-motion 不自動播);輪盤區不動。新增 Base 元件 RevealSection,滾動漸入正式元件化,landing 區段改由頁面層包覆。
 - **修重大 SSR bug**:①BaseButton 的 resolveComponent 寫法改條件分支;②Nuxt 元件自動註冊預設 pathPrefix 使 `components/common/BaseButton.vue` 註冊成 CommonBaseButton,模板的 `<BaseButton>` 全數解析失敗——**Wave 1 起所有 Base 元件(含 CTA、Randomize/Generate 鈕、BaseSheet)在頁面上從未渲染**;nuxt.config 設 `pathPrefix: false` 修復,四頁 smoke 驗證按鈕齊全、警告歸零。教訓:smoke 只 grep 文字不夠,關鍵互動元素要逐一驗證。
 
+- **輪播 v2**(擁有者細部回饋):藍光首張、每張左/右/中對齊 + 獨立 CTA(進一步/看更多)、側邊 44px 圓形箭頭(Apple/GM 慣例位)、三層背景(照片位/打光偏文字對側/文字側漸暗)——照片素材進場只填 image 欄位。
+- **Landing 區塊庫**(擁有者提議模組化區塊、採納):新增 AngledSection(Rivals 式斜切亮暗帶 + 超大章節標題)與 FullBleedBlock(Nothing 式滿版 + 浮動資訊卡);FeatureStorySection 加 tone。首頁重組節奏:輪播 → 亮/暗/亮斜切帶×3(01~03 圖文)→ 滿版社群預告 → 輪盤。組合防花規則(≤3 型態、職責固定、亮暗節奏)寫入 ui-style-guide;StoryStrip(TE 漫畫式)列待素材選項不先建。
+
 ### Next
 
 - PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。

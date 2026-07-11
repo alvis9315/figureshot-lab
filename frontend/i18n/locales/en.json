@@ -38,6 +38,12 @@
       "next": "Next slide",
       "goto": "Go to slide {n}"
     },
+    "showcase": {
+      "label": "Community shots",
+      "title": "Your shots, your stage.",
+      "desc": "Turn generated ideas into real photos, then share them with the world.",
+      "cta": "See a sample"
+    },
     "story1": {
       "kicker": "Build your team",
       "title": "Pick figures like choosing your heroes.",

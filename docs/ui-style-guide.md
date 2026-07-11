@@ -15,6 +15,25 @@
 
 擁有者回饋 Generator 太中規中矩,要求遊戲選角化;二選一裁決採**現代遊戲科技感**(hero-team-select-modern / Rivals 路線),不走復古街機(guide 對經典圖的 Avoid 已排除高飽和邊框與老式字體)。語彙:斜切平行四邊形卡(`.fs-skew-card`)、亮底深字名牌條、斜切 tab(`.fs-plate`)、低調斜向掃描紋背景(`.fs-game-bg`)、手機 A **VS** B 對峙。仍在深色電影 token 系統內,MvC 借結構(中央池 + 左右對峙)、Rivals 借皮(幾何與名牌)。此語彙**只用於 Generator**,Landing/Result 維持編輯感,不得全站蔓延。
 
+## Landing 區塊庫與節奏規則(2026-07-12 擁有者提議模組化區塊,採納)
+
+**區塊庫**(全部 token 驅動、共用 reveal 動畫、斜切角度統一 3rem,與 Generator 斜切語彙呼應):
+
+| 區塊 | 職責 | 參考來源 | 狀態 |
+|---|---|---|---|
+| HeroCarousel | 滿版破題輪播 | Apple / GM | ✅ |
+| AngledSection | **轉場**:斜切亮暗交替色帶 + 超大章節標題 | Rivals 角色詳情頁 | ✅ |
+| FeatureStorySection | **說明**:圖文並茂交替列(tone 亮暗) | Apple / Leica | ✅ |
+| FullBleedBlock | **章節開場**:滿版視覺 + 浮動資訊卡 + CTA | Nothing | ✅ |
+| QuickSpinSection | 輪盤快抽收尾 | — | ✅ |
+| StoryStrip 連環故事段 | 教學/品牌敘事 | Teenage Engineering 漫畫頁 | ⏸ 待插畫素材才建,適合未來「怎麼玩」頁,不進首頁 |
+
+**組合規則(防太花)**:
+1. 一頁最多 **2~3 種區塊型態**;變化靠「亮暗節奏 + 斜切方向交替」,不靠堆型態。
+2. 職責固定:滿版=開場、圖文=說明、斜切=轉場;不得混用職責。
+3. 首頁定案節奏:HeroCarousel → 斜切帶(亮/暗/亮)×3 內含圖文列 01~03 → FullBleedBlock(社群預告)→ QuickSpin。
+4. 新頁面要用區塊時從本表選,選不到才提新區塊(並登記 component-guideline)。
+
 ## 元件規則
 
 - 重複 pattern 抽成 component;className 不可超長重複貼。
