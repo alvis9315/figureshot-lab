@@ -17,9 +17,13 @@
 
 - Style/Scene 圖片導向選擇與分享獨立頁屬 Wave 2;Loading/Error 態待接 API 時實作;風格卡與角色池需 PRE-005/006 種子素材替換占位。
 
+- 字體定案(第 2 關完成):標題 Space Grotesk(self-host)+ 內文系統無襯線 + 等寬點綴;依參考收斂裁決(七來源全為無襯線),token 化。
+- Docker Desktop 安裝完成(官方 dmg 直裝 /Applications,免 sudo;CLI symlink 至 /opt/homebrew/bin)。**Flyway 實跑驗證通過**:Postgres 16.14 成功 migrate V1(6 表 + flyway_schema_history),health 連真 DB 回 200。驗畢已照規範停容器並關閉 Docker Desktop。
+
 ### Next
 
-- Wave 2:Style/Scene 選擇區 + CharacterDetailPanel + 分享頁;字體定案;PRE-002/003/005/006/007/010。
+- Wave 2:Style/Scene 選擇區 + CharacterDetailPanel + 分享頁(擁有者說稍等,待指示)。
+- PRE-002/003/005/006/007/010。
 
 ## 2026-07-11
 
