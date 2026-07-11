@@ -4,6 +4,8 @@
          滿版輪播 → 斜切亮帶 → 漸層轉場 → 滿版資訊卡 → 輪盤;規則見 docs/ui-style-guide.md -->
     <HeroCarousel />
 
+    <PinnedStorySection />
+
     <AngledSection :title="$t('landing.story1.kicker')" tone="light" slant="right">
       <RevealSection>
         <FeatureStorySection
@@ -29,6 +31,7 @@
         :description="$t('landing.story3.desc')"
         :cta="$t('landing.showcase.cta')"
         :to="localePath('/share/demo')"
+        size="lg"
       />
     </RevealSection>
 
@@ -40,6 +43,7 @@
 
 <script setup lang="ts">
 import HeroCarousel from '~/features/landing/components/HeroCarousel.vue'
+import PinnedStorySection from '~/features/landing/components/PinnedStorySection.vue'
 import AngledSection from '~/features/landing/components/AngledSection.vue'
 import GradientSection from '~/features/landing/components/GradientSection.vue'
 import FeatureStorySection from '~/features/landing/components/FeatureStorySection.vue'

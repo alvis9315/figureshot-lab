@@ -1,6 +1,6 @@
 <template>
-  <!-- 卡片櫥窗區塊 v2(Apple News 式):版心標題 + 全寬無邊界慣性卡列(書架感)
-       不加打光層——輪播已用過燈光,本區保持素面(擁有者指示 2026-07-12) -->
+  <!-- 卡片櫥窗區塊 v3:size 變體(sm=直幅小卡 / lg=Apple 式大卡+圖下說明,2026-07-12)
+       卡片媒體走 BaseMedia:填 video/image 即換素材,video 附播放鈕 -->
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="mx-auto max-w-6xl px-4">
       <div class="max-w-lg">
@@ -20,42 +20,75 @@
         v-for="(card, i) in loopedCards"
         :key="`${card.key}-${i}`"
         :to="to"
-        class="group ml-4 w-52 shrink-0 md:w-60"
+        class="group shrink-0"
+        :class="size === 'lg' ? 'ml-5 w-[82vw] sm:w-[34rem] lg:w-[46rem]' : 'ml-4 w-52 md:w-60'"
         draggable="false"
       >
-        <div
-          class="relative aspect-[3/4] overflow-hidden rounded-xl transition duration-150 group-hover:-translate-y-1"
-          :style="`background:
-            radial-gradient(ellipse 80% 60% at 50% 30%, hsl(${card.hue} 50% 42% / 0.45), transparent 75%),
-            linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`"
-        >
-          <div class="absolute inset-x-0 bottom-0 p-4">
-            <p class="font-mono text-[9px] uppercase tracking-wider text-fs-accent">{{ $t(`style.name.${card.style}`) }}</p>
-            <p class="mt-1 text-sm font-medium leading-snug">{{ $t(`landing.shelf.cards.${card.key}`) }}</p>
+        <template v-if="size === 'lg'">
+          <div class="relative aspect-video overflow-hidden rounded-2xl">
+            <BaseMedia
+              :video="card.video"
+              :image="card.image"
+              class="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+              :fallback="`background:
+                radial-gradient(ellipse 70% 60% at 45% 35%, hsl(${card.hue} 50% 42% / 0.40), transparent 75%),
+                linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`"
+            />
           </div>
-        </div>
+          <p class="mt-3 max-w-lg px-1 text-sm text-fs-muted">
+            <span class="font-medium text-fs-text">{{ $t(`landing.shelf.cards.${card.key}`) }}</span>
+            · {{ $t(`style.name.${card.style}`) }}
+          </p>
+        </template>
+        <template v-else>
+          <div
+            class="relative aspect-[3/4] overflow-hidden rounded-xl transition duration-150 group-hover:-translate-y-1"
+          >
+            <BaseMedia
+              :video="card.video"
+              :image="card.image"
+              :fallback="`background:
+                radial-gradient(ellipse 80% 60% at 50% 30%, hsl(${card.hue} 50% 42% / 0.45), transparent 75%),
+                linear-gradient(180deg, #1c1a17 0%, #100f0e 100%)`"
+            />
+            <div class="absolute inset-x-0 bottom-0 p-4">
+              <p class="font-mono text-[9px] uppercase tracking-wider text-fs-accent">{{ $t(`style.name.${card.style}`) }}</p>
+              <p class="mt-1 text-sm font-medium leading-snug">{{ $t(`landing.shelf.cards.${card.key}`) }}</p>
+            </div>
+          </div>
+        </template>
       </NuxtLink>
     </BaseShelf>
   </section>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   label: string
   title: string
   description: string
   cta: string
   to: string
-}>()
+  size?: 'sm' | 'lg'
+}>(), { size: 'sm' })
 
-const cards = [
+interface ShelfCard {
+  key: string
+  style: string
+  hue: number
+  video?: string
+  image?: string
+}
+
+// 素材進場:填 video(自帶播放鈕)或 image 即取代漸層占位
+const cards: ShelfCard[] = [
   { key: 'c1', style: 'cinematic', hue: 352 },
   { key: 'c2', style: 'street', hue: 212 },
   { key: 'c3', style: 'warmDaily', hue: 36 },
   { key: 'c4', style: 'neoTokyo', hue: 300 },
   { key: 'c5', style: 'warmDaily', hue: 150 },
   { key: 'c6', style: 'street', hue: 20 },
-] as const
+]
 
 // 複製一輪確保寬螢幕下卡片數足以無縫 loop
 const loopedCards = [...cards, ...cards]

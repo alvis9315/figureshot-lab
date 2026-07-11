@@ -41,6 +41,11 @@
     "media": {
       "featured": "Featured scene"
     },
+    "pinned": {
+      "l1": "A collection shouldn't just sit on a shelf.",
+      "l2": "Every figure has a story no one has shot yet.",
+      "l3": "FigureShot Lab finds it."
+    },
     "shelf": {
       "hint": "Drag to explore",
       "cards": {
@@ -167,6 +172,8 @@
   },
   "common": {
     "placeholder": "Coming soon — this page is a placeholder from project initialization.",
-    "close": "Close"
+    "close": "Close",
+    "play": "Play",
+    "pause": "Pause"
   }
 }
