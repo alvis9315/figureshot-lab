@@ -21,6 +21,12 @@
       :class="selected ? 'opacity-100' : 'opacity-0'"
       aria-hidden="true"
     >✓</span>
+    <span
+      class="absolute left-2 top-2 rounded-full px-1 text-xs text-fs-muted/50 transition duration-150 hover:text-fs-accent group-hover:text-fs-muted"
+      role="button"
+      :aria-label="$t('generator.detail.open')"
+      @click.stop="$emit('detail', figure)"
+    >ⓘ</span>
   </button>
 </template>
 
@@ -28,5 +34,5 @@
 import type { DemoFigure } from '../constants/demoFigures'
 
 defineProps<{ figure: DemoFigure; selected?: boolean }>()
-defineEmits<{ select: [DemoFigure] }>()
+defineEmits<{ select: [DemoFigure]; detail: [DemoFigure] }>()
 </script>

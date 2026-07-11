@@ -59,6 +59,15 @@
     "randomize": "Randomize",
     "generate": "Generate",
     "emptyPool": "No figures match your search.",
+    "detail": {
+      "open": "Details",
+      "brand": "Brand",
+      "scale": "Scale",
+      "type": "Type",
+      "demoType": "Action figure",
+      "addToSlot": "Add to slot",
+      "demoNote": "Demo details — real data comes from your collection."
+    },
     "demoNote": "Preview build: placeholder figures and static results. Real collection & AI generation land after the PRE gates.",
     "result": {
       "kicker": "Inspiration",
@@ -78,7 +87,45 @@
       "demoNote": "Save & share activate once accounts and the collection API are wired up."
     }
   },
+  "style": {
+    "sectionTitle": "Style & Scene",
+    "name": {
+      "cinematic": "Cinematic",
+      "street": "Street",
+      "warmDaily": "Warm Daily Life",
+      "neoTokyo": "Neo Tokyo"
+    },
+    "sceneLabel": "Scene",
+    "scene": {
+      "rooftop": "Rooftop",
+      "office": "Office",
+      "store": "Convenience store",
+      "beach": "Beach",
+      "ruins": "Ruins"
+    },
+    "moodLabel": "Mood",
+    "mood": {
+      "heartwarming": "Heartwarming",
+      "deadpan": "Deadpan",
+      "epic": "Epic",
+      "awkward": "Awkward"
+    },
+    "taskLabel": "Mission",
+    "task": {
+      "takeout": "Waiting for takeout",
+      "overtime": "Overtime",
+      "duel": "Duel",
+      "picnic": "Picnic"
+    }
+  },
+  "share": {
+    "kicker": "Shared inspiration",
+    "cta": "Create your own",
+    "backHome": "About FigureShot Lab",
+    "demoNote": "Preview build: this share page shows demo content until saved inspirations go live."
+  },
   "common": {
-    "placeholder": "Coming soon — this page is a placeholder from project initialization."
+    "placeholder": "Coming soon — this page is a placeholder from project initialization.",
+    "close": "Close"
   }
 }

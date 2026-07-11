@@ -1,13 +1,14 @@
 <template>
   <section class="panel-up rounded-2xl bg-fs-surface p-6 md:p-8">
     <!-- 結果面板(motion spec 3.7;版面借 gentle-monster-detail-focus 編輯感)-->
-    <p class="text-xs uppercase tracking-[0.3em] text-fs-accent">{{ $t('generator.result.kicker') }}</p>
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-fs-accent">{{ $t('generator.result.kicker') }}</p>
     <h2 class="mt-2 text-2xl font-semibold md:text-3xl">{{ $t('generator.result.demoTitle') }}</h2>
 
     <div class="mt-4 flex flex-wrap gap-2">
-      <BaseTag active>🎬 {{ $t('generator.result.demoScene') }}</BaseTag>
-      <BaseTag active>💭 {{ $t('generator.result.demoMood') }}</BaseTag>
-      <BaseTag active>🎯 {{ $t('generator.result.demoTask') }}</BaseTag>
+      <BaseTag active>🎬 {{ sceneText }}</BaseTag>
+      <BaseTag active>💭 {{ moodText }}</BaseTag>
+      <BaseTag active>🎯 {{ taskText }}</BaseTag>
+      <BaseTag v-if="selection.style" active>📷 {{ $t(`style.name.${selection.style}`) }}</BaseTag>
     </div>
 
     <div class="mt-6 grid gap-6 md:grid-cols-2">
@@ -28,12 +29,23 @@
     <div class="mt-6 flex flex-wrap gap-3">
       <BaseButton disabled>{{ $t('generator.result.save') }}</BaseButton>
       <BaseButton variant="outline" @click="$emit('reroll')">{{ $t('generator.result.reroll') }}</BaseButton>
-      <BaseButton variant="ghost" disabled>{{ $t('generator.result.share') }}</BaseButton>
+      <BaseButton variant="ghost" :to="localePath('/share/demo')">{{ $t('generator.result.share') }} ↗</BaseButton>
     </div>
     <p class="mt-3 text-xs text-fs-muted/60">{{ $t('generator.result.demoNote') }}</p>
   </section>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import type { StyleSelection } from '~/features/style/components/StyleScenePicker.vue'
+
+const props = defineProps<{ selection: StyleSelection }>()
 defineEmits<{ reroll: [] }>()
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const sceneText = computed(() => props.selection.scene ? t(`style.scene.${props.selection.scene}`) : t('generator.result.demoScene'))
+const moodText = computed(() => props.selection.mood ? t(`style.mood.${props.selection.mood}`) : t('generator.result.demoMood'))
+const taskText = computed(() => props.selection.task ? t(`style.task.${props.selection.task}`) : t('generator.result.demoTask'))
 </script>

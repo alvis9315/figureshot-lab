@@ -47,6 +47,7 @@
             :figure="f"
             :selected="isSelected(f)"
             @select="pick"
+            @detail="detailFigure = $event"
           />
         </div>
         <p v-if="visibleFigures.length === 0" class="py-8 text-center text-sm text-fs-muted">
@@ -64,6 +65,8 @@
       />
     </div>
 
+    <StyleScenePicker v-model="styleSelection" />
+
     <GeneratorControls
       v-model:search="search"
       :active-filters="activeFilters"
@@ -73,7 +76,13 @@
       @generate="showResult = true"
     />
 
-    <ResultPanel v-if="showResult" @reroll="reroll" />
+    <ResultPanel v-if="showResult" :selection="styleSelection" @reroll="reroll" />
+
+    <CharacterDetailPanel
+      :figure="detailFigure"
+      @close="detailFigure = null"
+      @pick="pickFromDetail"
+    />
 
     <p class="text-center text-xs text-fs-muted/60">{{ $t('generator.demoNote') }}</p>
   </div>
@@ -86,6 +95,8 @@ import FigureCard from '~/features/generator/components/FigureCard.vue'
 import SlotCard from '~/features/generator/components/SlotCard.vue'
 import GeneratorControls from '~/features/generator/components/GeneratorControls.vue'
 import ResultPanel from '~/features/generator/components/ResultPanel.vue'
+import CharacterDetailPanel from '~/features/generator/components/CharacterDetailPanel.vue'
+import StyleScenePicker, { type StyleSelection } from '~/features/style/components/StyleScenePicker.vue'
 import { demoFigures, type DemoFigure } from '~/features/generator/constants/demoFigures'
 
 // 靜態展示層:互動僅為呈現動畫狀態(選中/Slot/Lock/Randomize/Result),不含真實邏輯與 API
@@ -96,6 +107,8 @@ const search = ref('')
 const activeFilters = ref<string[]>([])
 const showResult = ref(false)
 const flashing = ref(false)
+const detailFigure = ref<DemoFigure | null>(null)
+const styleSelection = ref<StyleSelection>({ style: null, scene: null, mood: null, task: null })
 
 const slotCount = computed(() => (mode.value === 'squad' ? 3 : 2))
 const filledCount = computed(() => slots.value.filter(Boolean).length)
@@ -140,6 +153,11 @@ function toggleFilter(f: string) {
   activeFilters.value = activeFilters.value.includes(f)
     ? activeFilters.value.filter((x) => x !== f)
     : [...activeFilters.value, f]
+}
+
+function pickFromDetail(f: DemoFigure) {
+  pick(f)
+  detailFigure.value = null
 }
 
 function reroll() {

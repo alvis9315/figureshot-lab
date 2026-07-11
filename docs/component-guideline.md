@@ -62,6 +62,10 @@
 | FigureCard | Feature(generator) | 角色池占位卡(hover / 選中態) | /generator |
 | SlotCard | Feature(generator) | Slot(空/滿態、crossfade、Lock 脈衝) | /generator |
 | GeneratorControls | Feature(generator) | 搜尋 + 篩選 + Randomize + Generate 控制列 | /generator |
-| ResultPanel | Feature(generator) | 結果滑入面板(編輯感版面) | /generator |
+| ResultPanel | Feature(generator) | 結果滑入面板(編輯感版面,吃 StyleSelection) | /generator |
+| BaseSheet | Base | 手機 bottom sheet / 桌機 modal 容器 | 角色詳情,未來 filter drawer |
+| StyleCard | Feature(style) | 風格卡(預覽圖導向、hover 提亮、選中態) | /generator 風格區 |
+| StyleScenePicker | Feature(style) | 風格 4 卡 + 場景/情緒/任務 tag 群(v-model) | /generator |
+| CharacterDetailPanel | Feature(generator) | 角色詳情(BaseSheet 內,切換 crossfade) | /generator |
 
 共用 composable:`useReveal`(IntersectionObserver 滾動進場,搭 .reveal/.reveal-in;reduced-motion 安全)。

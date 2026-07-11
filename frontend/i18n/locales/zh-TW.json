@@ -59,6 +59,15 @@
     "randomize": "隨機抽選",
     "generate": "生成靈感",
     "emptyPool": "沒有符合搜尋的模型。",
+    "detail": {
+      "open": "查看詳情",
+      "brand": "廠牌",
+      "scale": "比例",
+      "type": "類型",
+      "demoType": "可動模型",
+      "addToSlot": "放入欄位",
+      "demoNote": "示範資料——正式版將顯示你收藏中的真實資訊。"
+    },
     "demoNote": "預覽版:占位角色與靜態結果;真實收藏與 AI 生成待 PRE 閘門完成後接線。",
     "result": {
       "kicker": "靈感",
@@ -78,7 +87,45 @@
       "demoNote": "儲存與分享將在帳號與收藏 API 接線後啟用。"
     }
   },
+  "style": {
+    "sectionTitle": "風格與場景",
+    "name": {
+      "cinematic": "電影感",
+      "street": "街頭",
+      "warmDaily": "溫暖日常",
+      "neoTokyo": "霓虹東京"
+    },
+    "sceneLabel": "場景",
+    "scene": {
+      "rooftop": "頂樓",
+      "office": "辦公室",
+      "store": "便利商店",
+      "beach": "海邊",
+      "ruins": "廢墟"
+    },
+    "moodLabel": "情緒",
+    "mood": {
+      "heartwarming": "溫馨",
+      "deadpan": "冷面幽默",
+      "epic": "熱血史詩",
+      "awkward": "尷尬"
+    },
+    "taskLabel": "任務",
+    "task": {
+      "takeout": "等外送",
+      "overtime": "加班",
+      "duel": "對決",
+      "picnic": "野餐"
+    }
+  },
+  "share": {
+    "kicker": "分享的靈感",
+    "cta": "我也要創作",
+    "backHome": "認識 FigureShot Lab",
+    "demoNote": "預覽版:儲存靈感功能上線前,本分享頁顯示示範內容。"
+  },
   "common": {
-    "placeholder": "即將推出——此頁為專案初始化的佔位頁。"
+    "placeholder": "即將推出——此頁為專案初始化的佔位頁。",
+    "close": "關閉"
   }
 }

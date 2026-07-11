@@ -20,10 +20,12 @@
 - 字體定案(第 2 關完成):標題 Space Grotesk(self-host)+ 內文系統無襯線 + 等寬點綴;依參考收斂裁決(七來源全為無襯線),token 化。
 - Docker Desktop 安裝完成(官方 dmg 直裝 /Applications,免 sudo;CLI symlink 至 /opt/homebrew/bin)。**Flyway 實跑驗證通過**:Postgres 16.14 成功 migrate V1(6 表 + flyway_schema_history),health 連真 DB 回 200。驗畢已照規範停容器並關閉 Docker Desktop。
 
+- **Wave 2 完成**(擁有者下令開工):①StyleScenePicker——風格 4 卡(Cinematic/街頭/溫暖日常/霓虹東京,漸層占位)+ 場景/情緒/任務 tag 群,整進 Generator 同頁分段,選擇會反映到 ResultPanel;②CharacterDetailPanel——FigureCard 加 ⓘ,BaseSheet(手機 bottom sheet / 桌機 modal)顯示詳情,可直接放入欄位;③分享頁 /share/[id]——SSR + OG/Twitter meta(兌現 ADR-0001 選 Nuxt 的理由),ResultPanel 分享鈕改為可用連結;④等寬字點綴套用於控制台標籤。build + SSR smoke(generator 風格卡、share OG、zh-TW)全過。
+
 ### Next
 
-- Wave 2:Style/Scene 選擇區 + CharacterDetailPanel + 分享頁(擁有者說稍等,待指示)。
-- PRE-002/003/005/006/007/010。
+- PRE-002/003/005/006/007/010;風格卡與角色池待 PRE-005/006 種子素材替換占位。
+- Wave 3(待指示):Collection/History 版面、Loading/Error 態(接 API 時)。
 
 ## 2026-07-11
 
