@@ -17,6 +17,6 @@
 ## Consequences
 
 - MVP(P0 收藏 CRUD、AI 生成)完全不受影響——本來就是文字驅動,現有 `figures.photo_url` 是使用者自願上傳的展示用途,不是 AI 輸入。
-- Phase 2(使用者照片 AI 分析)開工前,需先落地 13 節的 UGC 同意機制(見下方對 api-spec.md / security-guideline.md 的補充)。
+- Phase 2(使用者照片 AI 分析)開工前,需先落地完整分析文件第 13 節的 UGC 同意機制(已於 api-spec.md、security-guideline.md、error-code-spec.md 補上對應規則)。
 - 公共模型目錄構想([canonical-catalog-backlog.md](../research/canonical-catalog-backlog.md))若導入,目錄的「商品縮圖」欄位只能用 `LINK_ONLY`(連回原廠商品頁)或使用者/官方正式授權圖,不可爬取後代管顯示——這是回答擁有者「爬蟲資料是否能直接進資料庫」的關鍵界線,見該文件更新。
 - 正式商業上線前,需完成 18 節列出的 12 份法遵文件(服務條款、隱私政策等),已列入 roadmap「上線前必要文件」清單。

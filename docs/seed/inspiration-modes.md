@@ -30,7 +30,7 @@
 
 ## Mode 2:致敬原作(Homage)
 
-**核心概念**:重現角色出典作品中的招牌畫面/姿勢,**不要求同版本模型,允許跨角色**——只要動作/能力對得上,誰來演都算致敬。真實參照:漫畫業界的 **Homage Cover** 傳統(如 DC 曾讓 Batgirl 封面致敬電影《紫雨》海報、Catwoman 封面致敬《007》海報——本來就是跨媒介、跨角色的致敬玩法),以及 IG 模型攝影師 [@hotkenobi](https://mymodernmet.com/hotkenobi-action-figure-photography/) 實際在做的跨宇宙惡搞重現。
+**核心概念**:重現角色出典作品中的招牌畫面/姿勢,**不要求同版本模型,允許跨角色**——只要動作/能力對得上,誰來演都算致敬。真實參照:漫畫業界的 **Homage Cover** 傳統(如 DC 2015 年變體封面系列曾讓 Batgirl 致敬電影《紫雨》海報、Catwoman 致敬電影《Bullitt 警網鐵金剛》——本來就是跨媒介、跨角色的致敬玩法),以及 IG 模型攝影師 [@hotkenobi](https://mymodernmet.com/hotkenobi-action-figure-photography/) 實際在做的跨宇宙惡搞重現。
 
 **選角邏輯**:從 `homage_moves` 庫挑一個招牌動作模板 → 找出 `ability_tags` 對得上的模型(可以是本尊,也可以是別的角色)→ 命名時標注「致敬 XX 招牌動作」而非「扮演 XX」。
 
@@ -75,7 +75,7 @@
 | T03 | 隱匿三人組 | 能力型 | 3 隻 `stealth` | 潛行角色集結 |
 | T04 | 魔法使聯盟 | 能力型 | 2~4 隻 `magic` | 法師/咒術系集合 |
 | T05 | 飛行編隊 | 能力型 | 2~3 隻 `flight` | 飛行角色編隊 |
-| T06 | 蛇蠍美人特務組 | 原型型 | 3 隻 `femme_fatale_spy` | 擁有者原始範例:Black Cat / Catwoman / Black Widow / Yor Forger |
+| T06 | 蛇蠍美人特務組 | 原型型 | 從 `femme_fatale_spy` 中選 3 隻 | 擁有者原始範例池:Black Cat / Catwoman / Black Widow / Yor Forger |
 | T07 | 力量智慧速度三人組 | 原型型 | 3 隻,分別 `strength`/`strategist`/`speed` | 經典 Power Trio 三角色分工 |
 | T08 | 反差萌搭檔 | 原型型 | 2 隻,`personality_tags` 對立 | 與 Mode 3(搞笑)共用邏輯,可互相導流 |
 | T09 | 導師與新秀 | 原型型 | 2 隻,`mentor` + `rookie` | 師徒/傳承敘事 |
