@@ -67,6 +67,8 @@
 
 - **PRE 閘門六份初稿完成**(擁有者指示依序做):007 User Flow(五流程 Mermaid,依實作頁面繪製)、006 靈感模板 150 組(場景40/情緒25/任務50/命名35+組合公式)、002 訪談大綱(配額+腳本+記錄表)、003 競品調研(WebSearch:MFC/LearnPhoto365/AI文案工具——三賽道交集為空,差異化成立)、010 驗證計畫(10 指標紅黃綠門檻+8週+Pivot 對應)、005 種子資料(模板+50 筆示範批,待擁有者收藏補滿)。roadmap 各項轉「暫定(待審)」。
 
+- **接線前工程準備**(不受 PRE 閘門限制):①OpenAPI 契約 v0.2.0 完整化——auth/figures(含 photo multipart)/tags/inspiration 全endpoint、分頁慣例、統一錯誤 schema、抽選參數(mode/count/lockedFigureIds/style…)、AI 回退語意(aiGenerated=false);endpoint-summary 改「契約/實作」雙欄。②種子資料機器可讀化:inspiration-templates.json(規則引擎直接吃)+ figure-seed-data.csv(48 筆,對齊 figures 表欄位)。
+
 ### Next
 
 - 擁有者:審六份初稿、拍板 PRE-010 門檻值、提供收藏清單(補 PRE-005)、執行訪談(PRE-002)。

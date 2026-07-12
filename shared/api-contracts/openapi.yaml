@@ -1,10 +1,13 @@
 openapi: 3.1.0
 info:
   title: FigureShot Lab API
-  version: 0.1.0
-  description: 契約隨實作同步;目前僅 health。
+  version: 0.2.0
+  description: |
+    前後端契約正本(2026-07-12 依 docs/api-spec.md 完整化)。
+    實作狀態見 endpoint-summary.md;錯誤格式與錯誤碼見 docs/error-code-spec.md。
 servers:
   - url: http://localhost:8080/api/v1
+
 paths:
   /health:
     get:
@@ -19,14 +22,370 @@ paths:
               schema:
                 type: object
                 properties:
-                  status:
-                    type: string
-                    example: UP
+                  status: { type: string, example: UP }
+
+  /auth/register:
+    post:
+      summary: Register with email and password
+      operationId: register
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password, displayName]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 8 }
+                displayName: { type: string, maxLength: 100 }
+                consentAnalytics: { type: boolean, default: false }
+      responses:
+        "201":
+          description: Created; returns token pair
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthResponse" }
+        "409": { $ref: "#/components/responses/Error" }
+
+  /auth/login:
+    post:
+      summary: Log in
+      operationId: login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthResponse" }
+        "401": { $ref: "#/components/responses/Error" }
+
+  /auth/me:
+    get:
+      summary: Current user profile
+      operationId: getMe
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/User" }
+        "401": { $ref: "#/components/responses/Error" }
+
+  /figures:
+    get:
+      summary: List my figures (paged)
+      operationId: listFigures
+      parameters:
+        - { name: page, in: query, schema: { type: integer, default: 0 } }
+        - { name: size, in: query, schema: { type: integer, default: 20, maximum: 100 } }
+        - { name: sort, in: query, schema: { type: string, example: "createdAt,desc" } }
+        - { name: q, in: query, schema: { type: string }, description: 名稱/系列/廠牌關鍵字 }
+        - { name: status, in: query, schema: { $ref: "#/components/schemas/OwnershipStatus" } }
+        - { name: tag, in: query, schema: { type: string } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/FigurePage" }
+    post:
+      summary: Create figure
+      operationId: createFigure
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/FigureRequest" }
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Figure" }
+        "400": { $ref: "#/components/responses/Error" }
+
+  /figures/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: integer, format: int64 } }
+    get:
+      summary: Figure detail
+      operationId: getFigure
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Figure" }
+        "404": { $ref: "#/components/responses/Error" }
+    put:
+      summary: Update figure
+      operationId: updateFigure
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/FigureRequest" }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Figure" }
+        "404": { $ref: "#/components/responses/Error" }
+    delete:
+      summary: Delete figure
+      operationId: deleteFigure
+      responses:
+        "204": { description: Deleted }
+        "404": { $ref: "#/components/responses/Error" }
+
+  /figures/{id}/photo:
+    post:
+      summary: Upload figure photo (multipart)
+      operationId: uploadFigurePhoto
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer, format: int64 } }
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file: { type: string, format: binary }
+      responses:
+        "200":
+          description: OK; returns updated photoUrl
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Figure" }
+        "400": { $ref: "#/components/responses/Error" }
+
+  /tags:
+    get:
+      summary: List tags (system + user custom)
+      operationId: listTags
+      parameters:
+        - name: type
+          in: query
+          schema: { type: string, enum: [style, scene, interaction, mood] }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Tag" }
+
+  /inspiration-sessions:
+    post:
+      summary: Draw figures + generate inspiration
+      operationId: createInspiration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mode: { type: string, enum: [pair, squad, crossover], default: pair }
+                count: { type: integer, minimum: 1, maximum: 3, default: 2 }
+                lockedFigureIds:
+                  type: array
+                  items: { type: integer, format: int64 }
+                style: { type: string, nullable: true }
+                scene: { type: string, nullable: true }
+                mood: { type: string, nullable: true }
+                task: { type: string, nullable: true }
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/InspirationSession" }
+        "422": { $ref: "#/components/responses/Error" }
+        "429": { $ref: "#/components/responses/Error" }
+        "502":
+          description: AI provider failed;回退模板骨架(AI_001,body 仍為 201 結構但 aiGenerated=false)
+          content:
+            application/json:
+              schema: { $ref: "#/components/responses/Error/content/application~1json/schema" }
+    get:
+      summary: List my sessions
+      operationId: listInspirations
+      parameters:
+        - { name: page, in: query, schema: { type: integer, default: 0 } }
+        - { name: size, in: query, schema: { type: integer, default: 20 } }
+        - { name: saved, in: query, schema: { type: boolean } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/InspirationPage" }
+
+  /inspiration-sessions/{id}:
+    patch:
+      summary: Save / unsave / mark shared
+      operationId: patchInspiration
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer, format: int64 } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                saved: { type: boolean }
+                shared: { type: boolean }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/InspirationSession" }
+        "404": { $ref: "#/components/responses/Error" }
+
 components:
   securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+
+  responses:
+    Error:
+      description: 統一錯誤格式(docs/error-code-spec.md)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              timestamp: { type: string, format: date-time }
+              status: { type: integer }
+              code: { type: string, example: FIG_001 }
+              message: { type: string }
+              path: { type: string }
+              fieldErrors:
+                type: array
+                nullable: true
+                items:
+                  type: object
+                  properties:
+                    field: { type: string }
+                    message: { type: string }
+
+  schemas:
+    OwnershipStatus:
+      type: string
+      enum: [owned, wishlist, sold, borrowed, preorder]
+
+    User:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        email: { type: string, format: email }
+        displayName: { type: string }
+        avatarUrl: { type: string, nullable: true }
+        planType: { type: string, enum: [free, pro] }
+        consentAnalytics: { type: boolean }
+
+    AuthResponse:
+      type: object
+      properties:
+        accessToken: { type: string }
+        user: { $ref: "#/components/schemas/User" }
+
+    Tag:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        tagName: { type: string }
+        tagType: { type: string, enum: [style, scene, interaction, mood] }
+
+    FigureRequest:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string, maxLength: 200 }
+        brand: { type: string, nullable: true }
+        series: { type: string, nullable: true }
+        characterName: { type: string, nullable: true }
+        sourceTitle: { type: string, nullable: true }
+        figureType: { type: string, nullable: true }
+        scale: { type: string, nullable: true }
+        ownershipStatus: { $ref: "#/components/schemas/OwnershipStatus" }
+        tagIds:
+          type: array
+          items: { type: integer, format: int64 }
+
+    Figure:
+      allOf:
+        - $ref: "#/components/schemas/FigureRequest"
+        - type: object
+          properties:
+            id: { type: integer, format: int64 }
+            photoUrl: { type: string, nullable: true }
+            tags:
+              type: array
+              items: { $ref: "#/components/schemas/Tag" }
+            createdAt: { type: string, format: date-time }
+
+    FigurePage:
+      type: object
+      properties:
+        content:
+          type: array
+          items: { $ref: "#/components/schemas/Figure" }
+        page: { type: integer }
+        size: { type: integer }
+        totalElements: { type: integer }
+        totalPages: { type: integer }
+
+    InspirationSession:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        figures:
+          type: array
+          items: { $ref: "#/components/schemas/Figure" }
+        scene: { type: string, nullable: true }
+        mood: { type: string, nullable: true }
+        task: { type: string, nullable: true }
+        themeTitle: { type: string }
+        concept: { type: string, description: 擺拍建議(AI 或模板) }
+        caption: { type: string }
+        hashtags:
+          type: array
+          items: { type: string }
+        aiGenerated: { type: boolean, description: false=AI 失敗回退模板骨架 }
+        saved: { type: boolean }
+        shared: { type: boolean }
+        createdAt: { type: string, format: date-time }
+
+    InspirationPage:
+      type: object
+      properties:
+        content:
+          type: array
+          items: { $ref: "#/components/schemas/InspirationSession" }
+        page: { type: integer }
+        size: { type: integer }
+        totalElements: { type: integer }
+        totalPages: { type: integer }
+
 security:
   - bearerAuth: []
