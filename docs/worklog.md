@@ -84,9 +84,18 @@
 
 - **PRE-003 審閱 + 延伸討論**:擁有者提出實務痛點(海外觀眾常反覆問「這是哪隻/哪牌」)並質疑自由文字建收藏的風險(易錯、易混入盜版)。給出風險並陳的回饋後,記錄新 backlog 文件 [canonical-catalog-backlog.md](research/canonical-catalog-backlog.md):混合制構想(目錄搜尋優先 + 找不到才自訂新增待比對),含風險評估(維護成本、長尾覆蓋、Activation 衝擊、爬蟲法遵)與資料來源選項(不做決定)。competitor-analysis.md 補 MFC 白話註解、修正行動建議 1;interview-guide.md 加兩題白話新題(資料辨識痛點頻率、盜版觀感),取代原本生硬的「你用過 MFC 嗎」;roadmap 新增「討論中(不阻擋現行進度)」章節收錄此項。PRE-003 標記已完成。**PRE 閘門進度 3/6**(003、007、010)。
 
+## 2026-07-12(續二):圖片授權決策 + 靈感模板 v2
+
+### Done
+
+- **歸檔新法務決策文件**:擁有者提供「圖片搜尋、AI 靈感生成商業化與侵權風險決策」md(v1.0),完整解碼歸入 [policy/image-rights-and-commercialization-decision.md](policy/image-rights-and-commercialization-decision.md)(21 節:圖片使用風險分級、rights_status 資料設計、UGC 政策、訂閱/廣告風險、上線前 12 份法遵文件)。新增 **ADR-0005**(圖片來源與 AI 視覺輸入政策——僅限已授權/自製/使用者上傳,與 ADR-0003 純文字 AI 互相印證)。串接 security-guideline.md(UGC 政策段)、error-code-spec.md(FIG_004)、api-spec.md、user-flow.md Flow C。roadmap 新增「上線前必要文件」12 項清單(與 PRE 閘門不同層級,商業化開放前門檻,不阻擋 MVP 開發)。
+- **Q1 拍板**:照片上傳同意聲明是**表單內 inline checkbox**,不是獨立問卷頁,只在選擇上傳時出現,未勾選回 FIG_004。
+- **Q3 拍板**:PRE-005 種子資料改由擁有者私下爬蟲 + 自行正規化,完成後交付匯入(不由我代辦)。**關鍵盲點已標注**:文字/結構化資料可爬(呼應 ADR-0005 允許清單),商品照片不可爬取存放代管顯示(直接落在禁止清單),目錄圖片欄位建議用 LINK_ONLY 或留空。已更新 canonical-catalog-backlog.md。
+- **Q2 完成**(最大工程):擁有者提出「四種拍攝類型」構想(電影感/致敬原作/搞笑/主題先行選角),分析後定位:電影感是視覺風格層、其餘三種是選角邏輯層。識別出需要 3 個新標籤維度(ability_tags/personality_tags/archetype_tags)。WebSearch 三輪驗證真實參考:Homage Cover(漫畫業界跨媒介致敬傳統,DC 已有先例)、@hotkenobi(真實模型攝影師同好)、Power Trio/Five-Man Band(TVTropes 團隊分工原型)、Femme Fatale Spy(黑寡婦為範例,驗證擁有者的「女特務三人組」發想)、Odd Couple/Red Oni Blue Oni(搞笑配對公式)。產出 [seed/inspiration-modes.md](seed/inspiration-modes.md):4 模式選角邏輯、homage_moves 庫(12 組)、team_concepts 庫(9 組)、整體流程 Mermaid 圖。
+
 ### Next
 
-- 擁有者:續審其餘三份初稿(訪談大綱/種子資料/靈感模板)、提供收藏清單(補 PRE-005)、執行訪談(PRE-002,大綱已含新增兩題)。
+- 擁有者:續審靈感模板 v2、審其餘初稿(訪談大綱/種子資料)、私下完成爬蟲交付文字資料、執行訪談。
 - 前端:接 API(待 PRE 閘門完成 + 後端 P0);Loading/Error 態屆時補。
 
 ## 2026-07-11
