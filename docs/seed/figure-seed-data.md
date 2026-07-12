@@ -78,3 +78,7 @@ name,brand,series,character_name,source_title,figure_type,scale,style_tags,scene
 1. **擁有者收藏清單**(最優先):拍照或列表丟給我,我整理成模板格式
 2. 缺口分析後定向調研(如:女性向、國產 IP、特攝不足則補)
 3. 匯入前全表核對官方商品頁(名稱/比例/產品線)
+
+## 延伸討論:公共目錄化(不影響本批,未來方向)
+
+若之後導入「目錄優先搜尋 + 自訂新增」機制(見 [canonical-catalog-backlog.md](../research/canonical-catalog-backlog.md)),這 50~100 筆示範批可作為初始目錄種子;資料來源與持續更新方式待該文件的討論結果。
