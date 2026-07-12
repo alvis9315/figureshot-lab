@@ -21,6 +21,15 @@ local 允許 `http://localhost:3000`;正式環境白名單前端網域,禁 allow
 
 只暴露 `health`(部署健康檢查用);其餘 endpoint 不開或加權限。
 
+## 圖片來源與 UGC 政策(ADR-0005,2026-07-12)
+
+- **AI 視覺輸入僅限**:使用者上傳並勾選同意的照片、FigureShot Lab 自製照片、正式授權合作圖片(Phase 4)。系統不自動抓取/快取/轉發第三方圖片,不以 Hotlink 作正式功能。
+- **照片上傳同意**(inline checkbox,非獨立頁面,見 Flow C):「我確認此照片由本人拍攝,或本人已取得上傳、儲存並交由 FigureShot Lab 及其 AI 服務提供者處理的授權與許可。」未勾選不可送出含照片的表單,回 `FIG_004`。
+- **禁止上傳**:非本人拍攝且未授權、官方商品截圖、他人攝影作品、漫畫/電影截圖、私密影像、證件/敏感資訊、**盜版模型或販售素材**、商業轉售內容。
+- **使用者權利**:保留上傳內容授權(不轉讓著作權)、可隨時刪除、平台不未經同意用於廣告或提供給廠商。
+- **下架機制**:需建立智財申訴信箱、侵權檢舉表單、下架流程、申覆程序(Phase 2 開工前落地)。
+- 完整分析:[policy/image-rights-and-commercialization-decision.md](policy/image-rights-and-commercialization-decision.md)。
+
 ## 防濫用(spec 20H,實作 AI 功能時落地)
 
 - AI 生成次數限流(帳號 + IP)、失敗重試上限、429 回 `INS_002`。
