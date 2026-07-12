@@ -17,15 +17,15 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | 編號 | 項目 | 驗收條件 | 狀態 | 備註 |
 |---|---|---|---|---|
 | PRE-001 | 專案總綱文件 | spec md 為單一事實來源、版本紀錄 | **已完成** | 已收入 `docs/product-spec.md`(v0.2)+ 本狀態板 |
-| PRE-002 | 目標玩家訪談 | 訪談 8~12 位不同類型玩家 | 未開始 | 只有擁有者能做;訪談大綱可請 AI 代擬 |
-| PRE-003 | 競品與替代方案分析 | 比較收藏管理、輪盤、AI 文案、攝影社群等競品 | 未開始 | 可請 AI 代工初稿 |
+| PRE-002 | 目標玩家訪談 | 訪談 8~12 位不同類型玩家 | 暫定(大綱初稿待審) | [research/interview-guide.md](research/interview-guide.md);**執行**只有擁有者能做 |
+| PRE-003 | 競品與替代方案分析 | 比較收藏管理、輪盤、AI 文案、攝影社群等競品 | 暫定(初稿待審) | [research/competitor-analysis.md](research/competitor-analysis.md);結論:三賽道交集為空,差異化成立 |
 | PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | **已完成** | 2026-07-12 擁有者提供 UX 參考包(7 來源 22 張圖 + visual-reference-guide 逐張規格),歸檔於 docs/ux/references/ |
-| PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 未開始 | 資料模板可先出 |
-| PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 未開始 | 降低對 AI 的完全依賴 |
-| PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 未開始 | 定稿後轉 Mermaid 入 architecture.md |
+| PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 開發中(50 筆示範批) | [seed/figure-seed-data.md](seed/figure-seed-data.md);待擁有者收藏清單補滿+核對 |
+| PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 暫定(150 組初稿待審) | [seed/inspiration-templates.md](seed/inspiration-templates.md) |
+| PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 暫定(五流程初稿待審) | [user-flow.md](user-flow.md),依已實作頁面繪製,含 3 個待決問題 |
 | PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | **已完成** | 升級為高保真落地(靜態 UI + 動畫、不接 API):Landing/Generator/Style/Result/分享頁(Wave 1-2)+ Collection/新增表單/History/Login(Wave 3,2026-07-12)——全頁脫離佔位,雙主題 |
 | PRE-009 | 技術 ADR | 前端、後端、DB、Auth、Storage、AI Provider 均有決策紀錄 | **已完成** | `docs/adr/0001~0004`(2026-07-11 定案) |
-| PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 未開始 | KPI 清單已在 spec 20F,待定門檻值 |
+| PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 暫定(門檻值待拍板) | [research/mvp-validation-plan.md](research/mvp-validation-plan.md):10 指標紅黃綠門檻 + 8 週計畫 + Pivot 對應表 |
 
 ## 閘門 1:MVP 功能 Sprint(spec 第 18 節優先級)
 

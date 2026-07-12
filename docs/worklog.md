@@ -65,10 +65,12 @@
 - **書架卡定版**:補第 7 張示範卡(黃昏頂樓演唱會),一黃一白交替(7×2=14,loop 接縫不重色);另分享頁淺色版改藍卡、書架預設置中(Embla align center)、01 文字欄靠上對齊。
 - **Wave 3 完成**(擁有者核准開工):①/collection——收藏 grid(2/3/4 欄 RWD)+ 搜尋/狀態篩選 + CollectionCard(狀態 badge)+ BaseSheet 詳情(可帶進產生器)+ BaseEmptyState 空態;②/collection/new——欄位對齊 data-model 的靜態表單(類型/狀態/標籤 chips、照片區佔位、儲存待 API);③/history——InspirationCard(升級為 Base 共用)+ 儲存日期;④/login——正式表單(登入待帳號系統);示範資料 demoCollection 對齊 figures 表。五頁全部脫離佔位,PRE-008 標已完成。
 
+- **PRE 閘門六份初稿完成**(擁有者指示依序做):007 User Flow(五流程 Mermaid,依實作頁面繪製)、006 靈感模板 150 組(場景40/情緒25/任務50/命名35+組合公式)、002 訪談大綱(配額+腳本+記錄表)、003 競品調研(WebSearch:MFC/LearnPhoto365/AI文案工具——三賽道交集為空,差異化成立)、010 驗證計畫(10 指標紅黃綠門檻+8週+Pivot 對應)、005 種子資料(模板+50 筆示範批,待擁有者收藏補滿)。roadmap 各項轉「暫定(待審)」。
+
 ### Next
 
-- PRE 閘門剩餘:PRE-002 訪談、003 競品、005/006 種子素材、007 User Flow、010 驗證計畫。
-- 前端下一步:接 API(待 PRE 閘門 + 後端 P0 功能);Loading/Error 態屆時補。
+- 擁有者:審六份初稿、拍板 PRE-010 門檻值、提供收藏清單(補 PRE-005)、執行訪談(PRE-002)。
+- 前端:接 API(待 PRE 閘門完成 + 後端 P0);Loading/Error 態屆時補。
 
 ## 2026-07-11
 
