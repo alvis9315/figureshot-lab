@@ -25,7 +25,7 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | **已完成** | [user-flow.md](user-flow.md);3 個待決問題已拍板(訪客配額制、照片選填+文字必填規則、分享預設署名) |
 | PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | **已完成** | 升級為高保真落地(靜態 UI + 動畫、不接 API):Landing/Generator/Style/Result/分享頁(Wave 1-2)+ Collection/新增表單/History/Login(Wave 3,2026-07-12)——全頁脫離佔位,雙主題 |
 | PRE-009 | 技術 ADR | 前端、後端、DB、Auth、Storage、AI Provider 均有決策紀錄 | **已完成** | `docs/adr/0001~0004`(2026-07-11 定案) |
-| PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 暫定(門檻值待拍板) | [research/mvp-validation-plan.md](research/mvp-validation-plan.md):10 指標紅黃綠門檻 + 8 週計畫 + Pivot 對應表 |
+| PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | **已完成** | [research/mvp-validation-plan.md](research/mvp-validation-plan.md);Activation 門檻下調至 ≥35%(新產品寬容),樣本/時程(8週100人)與付費訊號門檻(≥30%)確認採用 |
 
 ## 閘門 1:MVP 功能 Sprint(spec 第 18 節優先級)
 
