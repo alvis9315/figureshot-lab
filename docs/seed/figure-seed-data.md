@@ -3,12 +3,19 @@
 > 初稿 2026-07-12:欄位模板 + **50 筆示範批**(公開常見產品,IP 名稱僅供辨識與索引用途——spec 20G;
 > 商品規格請於匯入前核對官方頁)。狀態:開發中——目標 ~100 筆,**優先用擁有者實際收藏清單補滿**,不足再由調研補。
 
-## 欄位模板(對齊 docs/data-model.md 的 figures 表)
+## 欄位模板(對齊 docs/data-model.md 的 figures 表 + inspiration-modes.md 的三個新維度)
 
 ```csv
-name,brand,series,character_name,source_title,figure_type,scale,style_tags,scene_tags
-商品名,廠牌,產品線,角色名,出典作品,類型(可動/PVC/組裝/Q版/怪獸),比例,風格標籤(;分隔),適合場景(;分隔)
+name,brand,series,character_name,source_title,figure_type,scale,style_tags,scene_tags,ability_tags,personality_tags,archetype_tags
+商品名,廠牌,產品線,角色名,出典作品,類型(可動/PVC/組裝/Q版/怪獸),比例,風格標籤(;分隔),適合場景(;分隔),能力/動作(;分隔),性格(;分隔),角色原型(;分隔)
 ```
+
+> **三個新維度**(供 [inspiration-modes.md](inspiration-modes.md) 的致敬/搞笑/主題先行選角模式用,整理收藏時順手標,不用之後回填):
+> - `ability_tags`:aerial_traversal / tendril_based / super_strength / stealth / magic / flight / speed / melee_weapon / energy_projection / shapeshifting
+> - `personality_tags`:deadpan / hotheaded / naive / arrogant / chaotic / stoic / shy / disciplined
+> - `archetype_tags`:femme_fatale_spy / mentor / rookie / trickster / rival / leader / strategist / villain
+>
+> 這些是「開放清單」,遇到現有值不夠用的角色可自行新增新值。下方 50 筆示範批的舊表格暫未回填此三欄(僅示範原始 8 欄),機器版 CSV 待補滿時一併加。
 
 ## 示範批(50 筆)
 
