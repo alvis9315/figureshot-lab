@@ -69,9 +69,20 @@
 
 - **接線前工程準備**(不受 PRE 閘門限制):①OpenAPI 契約 v0.2.0 完整化——auth/figures(含 photo multipart)/tags/inspiration 全endpoint、分頁慣例、統一錯誤 schema、抽選參數(mode/count/lockedFigureIds/style…)、AI 回退語意(aiGenerated=false);endpoint-summary 改「契約/實作」雙欄。②種子資料機器可讀化:inspiration-templates.json(規則引擎直接吃)+ figure-seed-data.csv(48 筆,對齊 figures 表欄位)。
 
+## 2026-07-12(續)
+
+### Done
+
+- **PRE-007 拍板**(擁有者引導審閱,三題皆非簡單是非題,擁有者提出關鍵工程考量):
+  1. 訪客免登入生成 → **裝置配額制**(cookie 追蹤每裝置 1 次真實 AI 呼叫,而非無限開放或全鎖登入)。擁有者主動指出商業化後每次生成即成本,不能無限開放——已寫入 user-flow.md Flow A 與 security-guideline.md 防濫用章節。
+  2. 照片是否必填 → 擁有者澄清真正問題是「AI 要怎麼辨識模型」而非顯示;查證 ADR-0003(v1 AI 純文字、不讀圖)後,**照片維持選填,改為 series/character_name/tags 三選一必填**——寫入 api-spec.md 驗證規則 + error-code-spec.md 新增 FIG_003。
+  3. 分享頁署名 → 預設顯示 display name。
+  - user-flow.md「待決」章節轉為「決策紀錄」;roadmap PRE-007 標記已完成。
+- 釐清 `/codex:review` 不存在(現有 codex 系列僅 rescue/setup,皆非文件審閱用途);self-prompting 技能評估後判定不適用於「引導審閱既有文件」此類任務(其設計是生成迴圈,非審閱迴圈)。
+
 ### Next
 
-- 擁有者:審六份初稿、拍板 PRE-010 門檻值、提供收藏清單(補 PRE-005)、執行訪談(PRE-002)。
+- 擁有者:續審其餘四份初稿(訪談大綱/競品分析/種子資料/靈感模板)、拍板 PRE-010 門檻值、提供收藏清單(補 PRE-005)、執行訪談(PRE-002)。
 - 前端:接 API(待 PRE 閘門完成 + 後端 P0);Loading/Error 態屆時補。
 
 ## 2026-07-11

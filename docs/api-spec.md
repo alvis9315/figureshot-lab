@@ -27,6 +27,8 @@ Base:`/api/v1`,JSON,JWT Bearer(除標注 public)。錯誤格式見 error-code-sp
 | DELETE | /figures/{id} | 刪除 |
 | POST | /figures/{id}/photo | 上傳照片(multipart) |
 
+**驗證規則**(2026-07-12 擁有者定案,user-flow.md 決策 2):`name` 必填;`series` / `character_name` / `tags` 三者至少填一,否則回 `FIG_003`(見 error-code-spec.md)。理由:v1 AI 為純文字模型(ADR-0003),不讀照片,靠這些欄位辨識模型與做搭配推理;照片本身選填不影響 AI 功能。
+
 ## Tags(P0,未實作)
 
 | Method | Path | 說明 |

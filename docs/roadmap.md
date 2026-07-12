@@ -22,7 +22,7 @@ Stage 1 工具期(現在) → Stage 2 社群期 → Stage 3 資料期 → Stage 
 | PRE-004 | UI Moodboard | Cinematic Editorial Workspace 視覺參考 | **已完成** | 2026-07-12 擁有者提供 UX 參考包(7 來源 22 張圖 + visual-reference-guide 逐張規格),歸檔於 docs/ux/references/ |
 | PRE-005 | 種子模型資料 | ~100 筆具多樣性的模型資料 | 開發中(50 筆示範批) | [seed/figure-seed-data.md](seed/figure-seed-data.md);待擁有者收藏清單補滿+核對 |
 | PRE-006 | 靈感模板資料 | ~150 組場景、任務、情緒與命名模板 | 暫定(150 組初稿待審) | [seed/inspiration-templates.md](seed/inspiration-templates.md) |
-| PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | 暫定(五流程初稿待審) | [user-flow.md](user-flow.md),依已實作頁面繪製,含 3 個待決問題 |
+| PRE-007 | User Flow | 訪客、會員、收藏新增、生成與分享流程 | **已完成** | [user-flow.md](user-flow.md);3 個待決問題已拍板(訪客配額制、照片選填+文字必填規則、分享預設署名) |
 | PRE-008 | Low-Fidelity Wireframe | 首頁、收藏庫、輪盤、結果頁與歷史紀錄 | **已完成** | 升級為高保真落地(靜態 UI + 動畫、不接 API):Landing/Generator/Style/Result/分享頁(Wave 1-2)+ Collection/新增表單/History/Login(Wave 3,2026-07-12)——全頁脫離佔位,雙主題 |
 | PRE-009 | 技術 ADR | 前端、後端、DB、Auth、Storage、AI Provider 均有決策紀錄 | **已完成** | `docs/adr/0001~0004`(2026-07-11 定案) |
 | PRE-010 | MVP 驗證計畫 | KPI、樣本數、測試週期與 Pivot 條件定案 | 暫定(門檻值待拍板) | [research/mvp-validation-plan.md](research/mvp-validation-plan.md):10 指標紅黃綠門檻 + 8 週計畫 + Pivot 對應表 |
